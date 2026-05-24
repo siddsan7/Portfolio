@@ -24,7 +24,7 @@ export default function Hero() {
               View projects
               <ArrowRight aria-hidden="true" size={18} />
             </Button>
-            <Button to="/contact" variant="secondary">
+            <Button href={profile.resume} variant="secondary" target="_blank" rel="noreferrer">
               Resume and links
               <Download aria-hidden="true" size={18} />
             </Button>

@@ -11,5 +11,5 @@ export const profile = {
   email: '[Contact email]',
   github: '[GitHub URL]',
   linkedin: '[LinkedIn URL]',
-  resume: '[Resume PDF coming soon]',
+  resume: 'https://drive.google.com/file/d/1b-1fFbyEB5KZibWbzwQiYJZNb8ajk_le/view?usp=sharing',
 }

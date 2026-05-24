@@ -15,7 +15,7 @@ export default function Contact() {
     <section className="section-shell" aria-labelledby="contact-heading">
       <Reveal>
         <SectionHeading eyebrow="Contact" title="Recruiters and collaborators can start here.">
-          Replace these placeholders with Siddharth's real resume, GitHub, LinkedIn, and preferred contact email before
+          The resume link is live. Replace the remaining GitHub, LinkedIn, and preferred contact email placeholders before
           publishing the site.
         </SectionHeading>
       </Reveal>
@@ -30,17 +30,32 @@ export default function Contact() {
         </Reveal>
 
         <div className="grid gap-3">
-          {contactItems.map(({ label, value, icon: Icon }, index) => (
-            <Reveal key={label} delay={index * 0.04}>
-              <div className="rounded-xl border border-dashed border-signal-cyan/35 bg-graphite-900/75 p-4">
-                <p className="flex items-center gap-2 text-sm font-semibold text-ink-50">
-                  <Icon aria-hidden="true" size={17} className="text-signal-cyan" />
-                  {label}
-                </p>
-                <p className="mt-2 text-sm text-ink-300">{value}</p>
-              </div>
-            </Reveal>
-          ))}
+          {contactItems.map(({ label, value, icon: Icon }, index) => {
+            const isLink = value.startsWith('http')
+
+            return (
+              <Reveal key={label} delay={index * 0.04}>
+                <div className="rounded-xl border border-dashed border-signal-cyan/35 bg-graphite-900/75 p-4">
+                  <p className="flex items-center gap-2 text-sm font-semibold text-ink-50">
+                    <Icon aria-hidden="true" size={17} className="text-signal-cyan" />
+                    {label}
+                  </p>
+                  {isLink ? (
+                    <a
+                      className="focus-ring mt-2 inline-block rounded-lg text-sm text-signal-cyan hover:text-ink-50"
+                      href={value}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {value}
+                    </a>
+                  ) : (
+                    <p className="mt-2 text-sm text-ink-300">{value}</p>
+                  )}
+                </div>
+              </Reveal>
+            )
+          })}
         </div>
       </div>
     </section>

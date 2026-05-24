@@ -43,7 +43,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <Button to="/contact" variant="secondary">
+          <Button href={profile.resume} variant="secondary" target="_blank" rel="noreferrer">
             Resume
           </Button>
         </div>
@@ -70,7 +70,14 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Button className="mt-4 w-full" to="/contact" variant="secondary" onClick={() => setOpen(false)}>
+          <Button
+            className="mt-4 w-full"
+            href={profile.resume}
+            variant="secondary"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
             Resume and contact
           </Button>
         </div>

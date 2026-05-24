@@ -13,7 +13,7 @@ export default function ContactCTA() {
               Open to internships, AI/product teams, startup work, and research-oriented opportunities.
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-ink-300">
-              The contact page keeps resume, GitHub, LinkedIn, and email placeholders visible until real links are added.
+              The contact page includes the live resume link and keeps missing contact placeholders visible.
             </p>
           </div>
           <Button to="/contact">

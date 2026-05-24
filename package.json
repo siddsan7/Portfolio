@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test:resume-links": "node scripts/check-resume-links.js",
     "preview": "vite preview"
   },
   "dependencies": {
