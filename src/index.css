@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #080a0f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), transparent 34rem),
+    radial-gradient(circle at top right, rgba(52, 211, 153, 0.08), transparent 30rem),
+    #080a0f;
+  color: #f4f7fb;
+  -webkit-tap-highlight-color: rgba(56, 189, 248, 0.18);
+}
+
+a {
+  color: inherit;
+  touch-action: manipulation;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: #f4f7fb;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal-cyan;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl scroll-mt-24 px-5 py-14 sm:px-8 lg:px-12 lg:py-20;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.24em] text-signal-cyan;
+}
+
+.surface-card {
+  @apply rounded-2xl border border-white/10 bg-graphite-900/80 shadow-glow backdrop-blur;
+}
