@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run build && node scripts/serve-static.js",
+    "build": "node scripts/build-static.js",
     "lint": "eslint .",
-    "test:resume-links": "node scripts/check-resume-links.js",
-    "preview": "vite preview"
+    "test:resume-links": "node scripts/check-static.js",
+    "test:static": "node scripts/check-static.js",
+    "test:preview": "node scripts/check-preview.js",
+    "preview": "node scripts/serve-static.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.1",
