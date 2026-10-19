@@ -1,11 +1,41 @@
 {
-  "framework": "vite",
+  "framework": null,
+  "git": { "deploymentEnabled": false },
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    {
+      "source": "/projects/:slug/index.html",
+      "destination": "/projects/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/resume/index.html",
+      "destination": "/resume/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.siddharthsanjay.com" }],
+      "destination": "https://siddharthsanjay.com/:path*",
+      "permanent": true
+    },
+    { "source": "/about", "destination": "/#about", "permanent": true },
+    { "source": "/skills", "destination": "/#skills", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/experience", "destination": "/resume/", "permanent": true },
+    { "source": "/projects", "destination": "/#work", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/Siddharth-Sanjay-Resume.pdf",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
     {
       "source": "/(.*)",
-      "destination": "/"
+      "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
     }
   ]
 }

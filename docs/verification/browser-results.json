@@ -1,0 +1,1118 @@
+{
+  "widths": [
+    {
+      "route": "/",
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/resume/",
+      "width": 320,
+      "scrollWidth": 320,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/resume/",
+      "width": 390,
+      "scrollWidth": 390,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/resume/",
+      "width": 768,
+      "scrollWidth": 768,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/resume/",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    },
+    {
+      "route": "/resume/",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "font": "Karrik, Arial, sans-serif",
+      "hiddenLinks": []
+    }
+  ],
+  "keyboard": [
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 12,
+      "bottom": 56.796875
+    },
+    {
+      "text": "Siddharth Sanjay",
+      "href": "#top",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Work",
+      "href": "#work",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "About",
+      "href": "#about",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Skills",
+      "href": "#skills",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Contact",
+      "href": "#contact",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Résumé ↗",
+      "href": "/resume/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "View work ↓",
+      "href": "#work",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 603.078125,
+      "bottom": 651.078125
+    },
+    {
+      "text": "Résumé ↗",
+      "href": "/resume/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 605.078125,
+      "bottom": 649.078125
+    },
+    {
+      "text": "Case study ↗",
+      "href": "/projects/harmonic-color-graph/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 438.125,
+      "bottom": 482.125
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/siddsan7/HarmonicColorGraph",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 438.125,
+      "bottom": 482.125
+    },
+    {
+      "text": "Case study ↗",
+      "href": "/projects/tonescope/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.984375,
+      "bottom": 481.984375
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/siddsan7/ToneScope",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.984375,
+      "bottom": 481.984375
+    },
+    {
+      "text": "Case study ↗",
+      "href": "/projects/truckerpath-dispatcher-os/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.84375,
+      "bottom": 481.84375
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/siddsan7/truckerpathpm",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.84375,
+      "bottom": 481.84375
+    },
+    {
+      "text": "Harmonic Color Graph ↗",
+      "href": "/projects/harmonic-color-graph/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.796875,
+      "bottom": 481.796875
+    },
+    {
+      "text": "System design ↗",
+      "href": "/projects/harmonic-color-graph/#system-design",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 510.796875,
+      "bottom": 554.796875
+    },
+    {
+      "text": "ToneScope ↗",
+      "href": "/projects/tonescope/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 583.796875,
+      "bottom": 627.796875
+    },
+    {
+      "text": "TruckerPath case study ↗",
+      "href": "/projects/truckerpath-dispatcher-os/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 656.796875,
+      "bottom": 700.796875
+    },
+    {
+      "text": "siddsan7@gmail.com",
+      "href": "mailto:siddsan7@gmail.com",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 844.984375,
+      "bottom": 899.578125
+    },
+    {
+      "text": "GitHub ↗",
+      "href": "https://github.com/siddsan7",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 850.28125,
+      "bottom": 894.28125
+    },
+    {
+      "text": "LinkedIn ↗",
+      "href": "https://www.linkedin.com/in/siddharth-sanjay/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 850.28125,
+      "bottom": 894.28125
+    },
+    {
+      "text": "Résumé ↗",
+      "href": "/resume/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 850.28125,
+      "bottom": 894.28125
+    },
+    {
+      "text": "siddharthsanjay.com",
+      "href": "https://siddharthsanjay.com",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 849.578125,
+      "bottom": 870.375
+    },
+    {
+      "text": "Skip to contentSiddharth SanjayWorkAboutSkillsContactRésumé ↗SiddharthSanjayAI engineerTools for understanding complex systems.I build AI and software tools for exploring music, understanding signals, and making informed decisions.View work ↓Résumé ↗Music, signals, software.01 / Selected projectsSelected projectsThree explorations in AI, audio, and product engineering.01/Harmonic Color GraphAI / MusicExplore what comes after a chord.Corpus-backed recommendations and grounded explanations, built on inspectable harmonic tools.Typed tools · Grounding · EvaluationCFmaj7GEmAmConcept illustrationCase study ↗GitHub ↗02/ToneScopeAudio / SystemsInspect a sound before changing it.A Windows guitar-effects workbench for selecting passages, comparing processing, and previewing reversible changes.C++ · Faust · ReactEQ→COMP→DRIVEConcept illustrationCase study ↗GitHub ↗03/TruckerPath Dispatcher OSProduct engineeringMake the trade-offs visible.A demo-first logistics product connecting dispatch workflows, explainable load ranking, and experiment planning.Next.js · Load scoring · PM CopilotRoute fit→Driver constraints→Load rankingConcept illustration · Demo workflowCase study ↗GitHub ↗02 / AboutAbout meI’m Siddharth, a computer science graduate from Arizona State University. My work connects AI, software engineering, and product thinking.Music is a recurring thread in my projects. I’m interested in tools that help people explore a complex system, understand its behavior, and make a deliberate choice.03 / ToolkitSkills in practiceAI systemsPython · LangGraph · Tool groundingHarmonic Color Graph ↗SoftwareTypeScript · React · Next.js · FastAPISystem design ↗Audio systemsC++ · Faust · Signal inspectionToneScope ↗ProductWorkflow design · Scoring · Experiment planningTruckerPath case study ↗04 / ContactLet’s talk.siddsan7@gmail.comGitHub ↗LinkedIn ↗Résumé ↗Siddharth Sanjaysiddharthsanjay.com",
+      "href": null,
+      "outline": "none",
+      "outlineWidth": "3px",
+      "top": -2966,
+      "bottom": 900.375
+    },
+    {
+      "text": "Skip to content",
+      "href": "#main",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 12,
+      "bottom": 56.796875
+    },
+    {
+      "text": "Siddharth Sanjay",
+      "href": "#top",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Work",
+      "href": "#work",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "About",
+      "href": "#about",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Skills",
+      "href": "#skills",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Contact",
+      "href": "#contact",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
+      "text": "Résumé ↗",
+      "href": "/resume/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    }
+  ],
+  "navigation": [
+    {
+      "id": "work",
+      "active": "Work",
+      "offset": 100.078125
+    },
+    {
+      "id": "about",
+      "active": "About",
+      "offset": 99.84375
+    },
+    {
+      "id": "skills",
+      "active": "Contact",
+      "offset": 153.609375
+    },
+    {
+      "id": "contact",
+      "active": "Contact",
+      "offset": 581.796875
+    }
+  ],
+  "axe": [
+    {
+      "route": "/",
+      "width": 390,
+      "violations": [],
+      "passes": 19,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                ".primary > span[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[y=\"62\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"458\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"400\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"200\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"142\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(410 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"102\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"185\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"300\"][y=\"317\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"383\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"498\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 390,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text[x=\"300\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"458\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"400\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"200\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"142\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 390,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(410 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 390,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text[x=\"102\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"185\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"300\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"383\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"498\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/resume/",
+      "width": 390,
+      "violations": [],
+      "passes": 18,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                ".primary > span"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/missing/",
+      "width": 390,
+      "violations": [],
+      "passes": 15,
+      "incomplete": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "violations": [],
+      "passes": 19,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                ".primary > span[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[y=\"62\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"458\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"400\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"200\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"142\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(410 255)\"] > text[x=\"72\"][y=\"25\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"102\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"185\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"300\"][y=\"317\"][font-size=\"15\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"383\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"498\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/harmonic-color-graph/",
+      "width": 1440,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text[x=\"300\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"458\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"400\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "text[x=\"200\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"142\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/tonescope/",
+      "width": 1440,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(40 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(225 255)\"] > text[x=\"159\"][y=\"42\"][font-size=\"22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "g[transform=\"translate(410 255)\"] > text[x=\"72\"][y=\"25\"][text-anchor=\"middle\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/projects/truckerpath-dispatcher-os/",
+      "width": 1440,
+      "violations": [],
+      "passes": 17,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "text[x=\"102\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"185\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"300\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "text[x=\"383\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            },
+            {
+              "target": [
+                "text[x=\"498\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/resume/",
+      "width": 1440,
+      "violations": [],
+      "passes": 18,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                ".primary > span"
+              ],
+              "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/missing/",
+      "width": 1440,
+      "violations": [],
+      "passes": 15,
+      "incomplete": []
+    }
+  ],
+  "performance": {
+    "desktop": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": "0.4 s",
+        "largest-contentful-paint": "0.4 s",
+        "total-blocking-time": "0 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "0.4 s"
+      },
+      "failures": [
+        "unused-javascript",
+        "bf-cache",
+        "cache-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ]
+    },
+    "mobile": {
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": "1.5 s",
+        "largest-contentful-paint": "1.8 s",
+        "total-blocking-time": "0 ms",
+        "cumulative-layout-shift": "0",
+        "speed-index": "1.5 s"
+      },
+      "failures": [
+        "unused-javascript",
+        "bf-cache",
+        "cache-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ]
+    }
+  },
+  "errors": [],
+  "contrast": [
+    {
+      "selector": ".role",
+      "color": "rgb(166, 76, 48)",
+      "background": "rgb(246, 242, 236)",
+      "ratio": 5.092315683549619
+    },
+    {
+      "selector": ".hero-summary",
+      "color": "rgb(103, 95, 109)",
+      "background": "rgb(246, 242, 236)",
+      "ratio": 5.482915269467234
+    },
+    {
+      "selector": ".harmony figcaption",
+      "color": "rgb(103, 95, 109)",
+      "background": "rgb(229, 218, 242)",
+      "ratio": 4.554573006285715
+    },
+    {
+      "selector": ".audio figcaption",
+      "color": "rgb(103, 95, 109)",
+      "background": "rgb(238, 234, 228)",
+      "ratio": 5.102705478653558
+    },
+    {
+      "selector": ".logistics figcaption",
+      "color": "rgb(103, 95, 109)",
+      "background": "rgb(231, 235, 228)",
+      "ratio": 5.066763813378652
+    },
+    {
+      "selector": ".skill-list p",
+      "color": "rgb(103, 95, 109)",
+      "background": "rgb(246, 242, 236)",
+      "ratio": 5.482915269467234
+    },
+    {
+      "selector": "nav a",
+      "color": "rgb(48, 36, 56)",
+      "background": "rgb(246, 242, 236)",
+      "ratio": 13.121202789977993
+    }
+  ],
+  "passiveNavigation": [
+    {
+      "id": "work",
+      "active": "work",
+      "bottom": false,
+      "hash": ""
+    },
+    {
+      "id": "about",
+      "active": "about",
+      "bottom": false,
+      "hash": ""
+    },
+    {
+      "id": "skills",
+      "active": "contact",
+      "bottom": true,
+      "hash": ""
+    },
+    {
+      "id": "contact",
+      "active": "contact",
+      "bottom": true,
+      "hash": ""
+    }
+  ],
+  "textZoom": "200% text size at 320 CSS px: no horizontal overflow; 400% reflow uses 320px matrix",
+  "noJavaScript": "All 5 routes, work anchor, and project navigation passed",
+  "contact": {
+    "email": "siddsan7@gmail.com",
+    "github": "https://github.com/siddsan7",
+    "linkedin": "https://www.linkedin.com/in/siddharth-sanjay/",
+    "projectRepositories": [
+      "https://github.com/siddsan7/HarmonicColorGraph",
+      "https://github.com/siddsan7/ToneScope",
+      "https://github.com/siddsan7/truckerpathpm"
+    ]
+  }
+}
