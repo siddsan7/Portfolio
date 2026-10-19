@@ -18,12 +18,13 @@ Preview serves the complete static output at http://127.0.0.1:4173. Set PORT to 
 
 ## Architecture and content
 
-React renders HTML at build time with Vite. Only header navigation hydrates in the browser, using the installed Framer Motion. Core content, links, section anchors and résumé work without JavaScript. No runtime backend, analytics, external font request or client router is required.
+React renders HTML at build time with Vite. CSS loads immediately. A small bootstrap waits for eager resources, the hero's decoded image, the font, and a painted frame before downloading the React/Framer Motion navigation enhancement. Core content, links, section anchors and résumé work without JavaScript. No runtime backend, analytics, external font request or client router is required.
 
 - `src/redesign/content.js`: identity, featured project evidence, contributions, skills and links.
 - `src/redesign/resume.js`: education and experience transcribed from the supplied résumé.
-- `src/redesign/Site.jsx`, `Artwork.jsx`: semantic pages and original conceptual SVG figures.
+- `src/redesign/Site.jsx`, `Artwork.jsx`: semantic pages and owner-selected concept illustrations; crop provenance is in `public/assets/artwork/README.md`.
 - `src/redesign/Navigation.jsx`: native section anchors with observed active state.
+- `src/redesign/bootstrap.js`: schedules the optional navigation download after the first painted artwork frame; `client.jsx` hydrates the header.
 - `src/redesign/styles.css`: Karrik, shared tokens, responsive styles and reduced motion.
 - `scripts/build-static.js`: complete HTML, metadata, structured data, sitemap, preview noindex.
 - `scripts/serve-static.js`: local strict serving, 308 redirects, 404s, compression and headers.

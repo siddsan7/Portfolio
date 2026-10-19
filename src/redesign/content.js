@@ -22,6 +22,11 @@ export const projects = [
     name: 'Harmonic Color Graph',
     category: 'AI / Music',
     kind: 'harmony',
+    image: '/assets/artwork/harmonic-color-graph.webp',
+    imageAlt:
+      'Concept illustration of chord relationships, with connected C, Am, Fmaj7, G, Dm, and Em nodes and a copper-colored path.',
+    imageWidth: 623,
+    imageHeight: 377,
     premise: 'Explore what comes after a chord.',
     summary:
       'Corpus-backed recommendations and grounded explanations, built on inspectable harmonic tools.',
@@ -71,6 +76,11 @@ export const projects = [
     name: 'ToneScope',
     category: 'Audio / Systems',
     kind: 'audio',
+    image: '/assets/artwork/tonescope.webp',
+    imageAlt:
+      'Concept illustration of dry and processed waveforms, a selected passage, and an EQ, compressor, and drive chain.',
+    imageWidth: 406,
+    imageHeight: 218,
     premise: 'Inspect a sound before changing it.',
     summary:
       'A Windows guitar-effects workbench for selecting passages, comparing processing, and previewing reversible changes.',
@@ -111,6 +121,11 @@ export const projects = [
     name: 'TruckerPath Dispatcher OS',
     category: 'Product engineering',
     kind: 'logistics',
+    image: '/assets/artwork/dispatcher.webp',
+    imageAlt:
+      'Concept illustration of a route, truck, and location pins above a demo workflow for route fit, driver constraints, and load ranking.',
+    imageWidth: 406,
+    imageHeight: 218,
     premise: 'Make the trade-offs visible.',
     summary:
       'A demo-first logistics product connecting dispatch workflows, explainable load ranking, and experiment planning.',

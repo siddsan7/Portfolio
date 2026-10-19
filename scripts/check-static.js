@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFile, access } from 'node:fs/promises'
 import { createStaticServer } from './serve-static.js'
 import { routes, projects, person, redirects } from '../src/redesign/content.js'
@@ -79,6 +80,21 @@ try {
     }
   }
   const home = await (await fetch(base)).text()
+  const bootstrapPath = home.match(/<script[^>]*src="([^"]+)"/)?.[1]
+  check(Boolean(bootstrapPath), 'homepage has an enhancement bootstrap')
+  const bootstrap = await readFile(`dist${bootstrapPath}`)
+  check(
+    bootstrap.length < 5000,
+    'initial JavaScript stays below 5KB before deferred navigation',
+  )
+  check(
+    !home.includes('rel="modulepreload"'),
+    'navigation bundle is not eagerly preloaded',
+  )
+  check(
+    home.includes('rel="stylesheet"'),
+    'styles remain available before enhancement',
+  )
   for (const fact of [
     'AI engineer',
     'Arizona State University',
@@ -190,7 +206,10 @@ try {
       sitemap.includes(`${person.domain}${route}</loc>`),
       `sitemap ${route}`,
     )
-  const robots = (await readFile('dist/robots.txt', 'utf8')).replaceAll('\r\n', '\n')
+  const robots = (await readFile('dist/robots.txt', 'utf8')).replaceAll(
+    '\r\n',
+    '\n',
+  )
   check(
     robots.includes('User-agent: GPTBot\nDisallow: /') &&
       robots.includes('User-agent: OAI-SearchBot\nAllow: /'),
@@ -200,6 +219,15 @@ try {
   check(!config.rewrites, 'no blanket SPA fallback')
   await access('dist/social/portfolio.png')
   check(true, 'social image exists')
+  const artwork = JSON.parse(
+    await readFile('docs/verification/artwork-integrity.json', 'utf8'),
+  )
+  for (const [file, expected] of Object.entries(artwork)) {
+    const hash = createHash('sha256')
+      .update(await readFile(`public/assets/artwork/${file}`))
+      .digest('hex')
+    check(hash === expected, `${file}: artwork bytes unchanged`)
+  }
   console.log(
     `Static contracts passed: ${assertions} assertions across ${routes.length} routes.`,
   )

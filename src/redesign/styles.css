@@ -379,9 +379,12 @@ section[id],
 .project-visual.logistics {
   background: var(--sage);
 }
-.project-visual svg {
+.project-visual img {
   flex: none;
+  width: 100%;
+  height: auto;
   aspect-ratio: 5 / 3;
+  object-fit: contain;
 }
 .project-visual figcaption {
   font-family: var(--mono);
@@ -422,8 +425,17 @@ section[id],
   grid-row: 1;
 }
 .music-print {
+  display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 1.9;
-  object-fit: cover;
+  object-fit: contain;
+}
+.resonance {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .skills {
   padding-bottom: 0;
@@ -552,7 +564,7 @@ section[id],
   max-width: 900px;
   margin: 36px auto 56px;
 }
-.case-study > .project-visual svg {
+.case-study > .project-visual img {
   max-height: 440px;
 }
 .reading-column section {
@@ -726,7 +738,7 @@ section[id],
     grid-row: 3;
     margin-top: 0;
   }
-  .project-visual svg {
+  .project-visual img {
     max-height: 390px;
   }
   .panel-copy {

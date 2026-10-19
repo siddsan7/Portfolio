@@ -1,0 +1,50 @@
+{
+  "baseline": {
+    "lcpMs": 2781.0137999999997,
+    "performance": 0.96,
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "simulate",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    },
+    "criticalScriptBytes": 101910
+  },
+  "targetMs": 2500,
+  "runs": [
+    {
+      "run": 1,
+      "lcpMs": 1958.446,
+      "fcpMs": 908.4459999999999,
+      "cls": 0,
+      "tbtMs": 10,
+      "performance": 99
+    },
+    {
+      "run": 2,
+      "lcpMs": 1955.2523999999999,
+      "fcpMs": 905.2524000000001,
+      "cls": 0,
+      "tbtMs": 8,
+      "performance": 99
+    },
+    {
+      "run": 3,
+      "lcpMs": 1805.1006000000002,
+      "fcpMs": 905.1006,
+      "cls": 0,
+      "tbtMs": 9,
+      "performance": 100
+    }
+  ]
+}
