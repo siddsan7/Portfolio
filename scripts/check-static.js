@@ -14,6 +14,15 @@ const check = (condition, label) => {
   assertions++
 }
 try {
+  const hosting = JSON.parse(await readFile('vercel.json', 'utf8'))
+  for (const [source, destination] of Object.entries(redirects)) {
+    check(
+      hosting.redirects.some(
+        (rule) => rule.source === `${source}/` && rule.destination === destination && rule.permanent,
+      ),
+      `${source}: hosting redirect matches trailingSlash normalization`,
+    )
+  }
   const titles = new Set(),
     descriptions = new Set()
   for (const route of routes) {

@@ -22,11 +22,11 @@
       "destination": "https://siddharthsanjay.com/:path*",
       "permanent": true
     },
-    { "source": "/about", "destination": "/#about", "permanent": true },
-    { "source": "/skills", "destination": "/#skills", "permanent": true },
-    { "source": "/contact", "destination": "/#contact", "permanent": true },
-    { "source": "/experience", "destination": "/resume/", "permanent": true },
-    { "source": "/projects", "destination": "/#work", "permanent": true }
+    { "source": "/about/", "destination": "/#about", "permanent": true },
+    { "source": "/skills/", "destination": "/#skills", "permanent": true },
+    { "source": "/contact/", "destination": "/#contact", "permanent": true },
+    { "source": "/experience/", "destination": "/resume/", "permanent": true },
+    { "source": "/projects/", "destination": "/#work", "permanent": true }
   ],
   "headers": [
     {
