@@ -190,7 +190,7 @@ try {
       sitemap.includes(`${person.domain}${route}</loc>`),
       `sitemap ${route}`,
     )
-  const robots = await readFile('dist/robots.txt', 'utf8')
+  const robots = (await readFile('dist/robots.txt', 'utf8')).replaceAll('\r\n', '\n')
   check(
     robots.includes('User-agent: GPTBot\nDisallow: /') &&
       robots.includes('User-agent: OAI-SearchBot\nAllow: /'),

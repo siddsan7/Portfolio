@@ -42,4 +42,6 @@ Final checks and measurements are recorded in docs/verification/report.md. No me
 
 ## Next action
 
-Complete final checks, inspect the staged diff and clean exported commit, open PR to main, attach it, then merge only after council sign-off and checks. Preserve unrelated work unstaged. Do not deploy or change DNS. After owner-authorized release, verify actual host HTTPS, redirects, status/headers, access controls, social assets and crawler behavior, then owner Search Console/Bing account setup. Human/screen-reader checks and field Core Web Vitals remain separate launch/follow-up work.
+Implementation, evidence and independent council review are complete. PR status is tracked in GitHub and the chat attachment; this redesign is authorized to merge after the recorded council approval and final checks. The remaining next action is owner release review, not more design exploration. Preserve unrelated work unstaged. Do not deploy or change DNS. After owner-authorized release, verify actual host HTTPS, redirects, status/headers, access controls, social assets and crawler behavior, then owner Search Console/Bing account setup. Human/screen-reader checks and field Core Web Vitals remain separate launch/follow-up work.
+
+Clean exported source passed npm ci/lint/build/contracts independently of pre-existing files. Normalize CRLF in text-file contract checks; the robots policy must still be checked exactly. Legacy diffs remained byte-identical after the redesign commit.

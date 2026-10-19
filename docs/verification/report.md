@@ -5,7 +5,7 @@
 ## Completed evidence
 
 - Complete static HTML for home, three case studies and résumé, plus six noindex archives and a useful missing-path 404 page. Core content and native navigation work without JavaScript.
-- Lint/build pass; static contracts cover route statuses/refresh, links/assets, raw content, distinct metadata, canonical/social/schema consistency, archives, sitemap, robots, PDF, slash/index aliases, and query-preserving www redirects. Preview-build noindex check passes on all five public routes and restores production output.
+- Lint/build pass, including an isolated committed export with npm ci from the unchanged lockfile; static contracts cover route statuses/refresh, links/assets, raw content, distinct metadata, canonical/social/schema consistency, archives, sitemap, robots, PDF, slash/index aliases, and query-preserving www redirects. Preview-build noindex check passes on all five public routes and restores production output.
 - 25 route/width combinations at 320/390/768/1024/1440px: no horizontal overflow or clipped links. Also checked enlarged text at 200% on 320px and 400% reflow equivalent at 320 CSS pixels. This is a programmatic reflow check, not an assertion that every browser's zoom UI was manually exercised.
 - Keyboard and passive navigation: skip link first, Enter focuses main, 32 tab stops retain visible outlines, no trap. Native anchor/hash/back/forward and hero no-active-state checks pass. Contact becomes active at document bottom; Skills can resolve there on a tall viewport when the page cannot scroll farther.
 - Reduced motion: browser emulation, snapped nav indicator and disabled CSS translation; standard shared-layout indicator also checked. Content starts visible with no scroll reveals or autonomous artwork motion.
@@ -51,3 +51,5 @@ Motion API guidance checked at https://motion.dev/docs/react-layout-animations a
 No deployment, promotion, domain connection or DNS change was performed. Git-triggered Vercel deployment is disabled. The owner authorized merging after council review; release approval remains separate.
 
 Local strict serving is production-equivalent in page structure and status intent, not a verified Vercel deployment. After owner-authorized release, verify HTTPS, www/alternate hosts and query preservation, direct/refresh/404 statuses, Vercel headers, staging protection, crawler/firewall access, absolute social assets/PDF and actual social unfurls. Search Console/Bing verification and sitemap submission require owner accounts. Human recruiter and screen-reader reviews remain pending. Current concept graphics are truthful illustrations; verified product screenshots can be added later without blocking this implementation.
+
+Clean-export verification caught and fixed a CRLF-sensitive robots check. Directive values remain checked exactly after line-ending normalization. The isolated export passes lint/build and all 167 static assertions without pre-existing uncommitted files.
