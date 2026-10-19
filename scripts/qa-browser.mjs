@@ -43,12 +43,41 @@ try {
     )
     await page.locator('main h1').waitFor()
   }
+  async function prepareCapture() {
+    await page.evaluate(async () => {
+      const start = scrollY
+      for (const image of document.images) {
+        image.scrollIntoView({ block: 'center' })
+        await image.decode()
+      }
+      scrollTo(0, start)
+    })
+  }
   page.on('pageerror', (error) => result.errors.push(error.message))
   await visit(base)
   await page.evaluate(() => document.fonts.ready)
   assert(
     await page.evaluate(() => document.fonts.check('18px Karrik')),
     'Karrik loaded',
+  )
+  await page.waitForFunction(() =>
+    performance
+      .getEntriesByType('resource')
+      .some((entry) => /\/assets\/client-.*\.js$/.test(entry.name)),
+  )
+  result.enhancement = await page.evaluate(() => {
+    const navigation = performance.getEntriesByType('navigation')[0]
+    const client = performance
+      .getEntriesByType('resource')
+      .find((entry) => /\/assets\/client-.*\.js$/.test(entry.name))
+    return {
+      loadEventStart: navigation.loadEventStart,
+      clientRequestStart: client.startTime,
+    }
+  })
+  assert(
+    result.enhancement.clientRequestStart >= result.enhancement.loadEventStart,
+    'navigation download starts after eager resources finish',
   )
   result.contrast = await page.evaluate(() => {
     const luminance = (color) => {
@@ -143,16 +172,20 @@ try {
       )
       assert(!layout.hiddenLinks.length, `${route} at ${width}: clipped links`)
       result.widths.push({ route, ...layout })
-      if (route === '/' && [390, 1440].includes(width))
+      if (route === '/' && [390, 1440].includes(width)) {
+        await prepareCapture()
         await page.screenshot({
           path: `${evidence}/${width === 1440 ? 'desktop' : 'mobile'}.png`,
           fullPage: true,
         })
-      if (route === '/projects/harmonic-color-graph/' && width === 1440)
+      }
+      if (route === '/projects/harmonic-color-graph/' && width === 1440) {
+        await prepareCapture()
         await page.screenshot({
           path: `${evidence}/case-study.png`,
           fullPage: true,
         })
+      }
     }
   }
 

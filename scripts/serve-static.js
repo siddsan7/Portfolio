@@ -16,6 +16,7 @@ const types = {
   '.txt': 'text/plain',
   '.pdf': 'application/pdf',
   '.png': 'image/png',
+  '.webp': 'image/webp',
 }
 export function createStaticServer(root = resolve('dist')) {
   return createServer(async (request, response) => {
@@ -74,7 +75,9 @@ export function createStaticServer(root = resolve('dist')) {
         'Content-Type': types[extname(file)] || 'application/octet-stream',
         'X-Content-Type-Options': 'nosniff',
       }
-      headers['Cache-Control'] = path.startsWith('/assets/')
+      headers['Cache-Control'] = /^\/assets\/[^/]+-[\w-]{8,}\.(js|css)$/.test(
+        path,
+      )
         ? 'public, max-age=31536000, immutable'
         : path.startsWith('/fonts/')
           ? 'public, max-age=86400'

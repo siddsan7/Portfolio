@@ -10,6 +10,7 @@
     "test:resume-links": "node scripts/check-static.js",
     "test:static": "node scripts/check-static.js",
     "test:preview": "node scripts/check-preview.js",
+    "test:lcp": "node scripts/check-lcp.mjs",
     "preview": "node scripts/serve-static.js"
   },
   "dependencies": {

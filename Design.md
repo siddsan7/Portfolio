@@ -2,6 +2,8 @@
 
 Status: direction approved by Siddharth on 2026-10-19. Implement this design; copy and project images can receive a later owner edit. This document specifies the first complete implementation, not a request for another round of concepts.
 
+Owner refinement on 2026-10-19: use the supplied HCG diagram and exact, lossless illustration crops from this PNG for the hero, ToneScope, logistics, and About. This replaces the SVG recreation requirements for these five illustrations only. Keep page text, links, and concept captions as accessible HTML. Crop provenance is recorded in `public/assets/artwork/README.md`.
+
 ## 1. Read first
 
 Read `AGENTS.md`, this file, `SEO.md`, `.brain/working-state.md`, and `.brain/project-research.md`. Inspect the existing app and content before replacing files. Use the project lockfile and commands.
