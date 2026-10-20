@@ -123,6 +123,8 @@ try {
       check(html.includes(heading), `${project.name}: ${heading} in raw HTML`)
     check(html.includes(`blob/${project.caseStudy.revision}/`), `${project.name}: evidence links pin the reviewed revision`)
     check(html.includes('class="architecture-flow"'), `${project.name}: architecture flow without JavaScript`)
+    if (project.caseStudy.walkthrough.captureSource)
+      check(html.includes(project.caseStudy.walkthrough.captureSource), `${project.name}: actual capture provenance is linked separately`)
   }
   for (const project of projects)
     check(

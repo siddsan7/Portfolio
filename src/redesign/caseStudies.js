@@ -87,6 +87,7 @@ export const caseStudies = {
         { src: '/assets/walkthroughs/tonescope-undo.webp', alt: 'ToneScope Output restored to 0 dB after applying the 2 dB proposal and undoing it once.', caption: 'After Apply (+2 dB) and one Undo: Output is 0 dB again, with the original native controls restored.' },
       ],
       source: ['Actual embedded assistant flow', 'tests/ui/embedded-native.mjs'],
+      captureSource: 'https://github.com/siddsan7/Portfolio/blob/5d259cfe1402d523250df6a57ea63b0932fb72c9/docs/visuals/tonescope-walkthrough-capture.md',
     },
   },
   'truckerpath-dispatcher-os': {

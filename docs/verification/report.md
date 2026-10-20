@@ -11,7 +11,7 @@ Metrics retain their actual denominators and dates. ToneScope's authored determi
 ## Current checks
 
 - Lint and production build pass. Five complete public HTML routes, six noindex archives and a genuine 404 are emitted. Essential content is readable without JavaScript; only navigation and the optional calculator are enhanced.
-- Static checker: 217 assertions across five public routes. Includes status/refresh, links/assets, factual HTML, canonical/social/schema consistency, archives, sitemap/robots, PDF policy, aliases, query-preserving redirects, case-study structure, Experience order and immutable evidence links.
+- Static checker: 218 assertions across five public routes. Includes status/refresh, links/assets, factual HTML, canonical/social/schema consistency, archives, sitemap/robots, PDF policy, aliases, query-preserving redirects, case-study structure, Experience order and immutable evidence links.
 - Preview checker: all five routes are noindex in preview mode, then production output is restored.
 - Browser matrix: 25 route/width combinations at 320/390/768/1024/1440px. No page overflow. All five routes also pass 200% text enlargement at 320 CSS pixels; evidence tables scroll inside labeled, focusable regions.
 - Keyboard: 25 reachable homepage controls with visible focus, skip link and native anchor/history behavior. Passive navigation now includes Experience. Reduced-motion behavior and no-JavaScript navigation remain checked.

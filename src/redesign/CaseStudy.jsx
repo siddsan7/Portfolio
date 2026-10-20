@@ -140,6 +140,7 @@ export default function CaseStudy({ project, nextProject }) {
           </ol>
           {detail.walkthrough.calculator && <NetCalculator />}
           <SourceLink project={project} source={detail.walkthrough.source} />
+          {detail.walkthrough.captureSource && <ArrowLink href={detail.walkthrough.captureSource}>Capture conditions and observations</ArrowLink>}
         </section>
         <section><h2>Current scope</h2><p>{scope}</p></section>
         <section className="sources">
