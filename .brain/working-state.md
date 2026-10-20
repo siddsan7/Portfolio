@@ -38,4 +38,4 @@ Owner evidence gaps: SkipCourse ownership/approved measured outcomes/deployment 
 
 ## Next action
 
-Complete final performance/clean-tree checks, cite capture provenance at an immutable Portfolio commit, push and attach the PR, inspect its final diff/status, then mark the goal complete. Preserve raw useful native snapshots before archiving the managed capture worktree.
+Final cold mobile LCP1657/2259/1656ms passes; isolated committed export536c182 passes locked install/lint/build/218static/preview/PDF/fullbrowser. Capture provenance pinned at5d259cf; raw snapshots saved to ignored output/tonescope-native-audit before capture-worktree archive. All three reviewers accepted fixes. Existing lockfile audit18findings/13high is documented; packages unchanged. Push/attach PR, inspect final diff/status and update this pointer, then complete goal. No merge/deploy.

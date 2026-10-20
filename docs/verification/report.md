@@ -31,6 +31,8 @@ A separate evidence reviewer verified all 17 distinct cited file paths at their 
 
 Mobile lab LCP passed at 1657, 2259 and 1656 ms, with CLS 0 and performance scores 100/98/100. The unchanged gate requires three cold default-mobile runs below 2500 ms and asserts throttle/viewport settings. Initial JavaScript remains 2.12KB raw. See `lcp-results.json`. Lab results are not field p75 Core Web Vitals or production-host measurements. Clean committed-tree verification is recorded in the acceptance record.
 
+Isolated committed export `536c182` passed locked dependency installation, lint/build, 218 static assertions, preview indexing/production restore, PDF checks and the complete browser suite. This verifies that unrelated local legacy edits are not required. Lockfile install reports 18 existing audit findings (13 high); omit-dev audit reports ten including build tools and legacy React Router, which is outside the active frontend. Dependencies are unchanged; no vulnerability-remediation claim is made. Track dependency maintenance separately.
+
 `desktop.png`, `mobile.png`, `case-study.png` and `resume.png` are actual generated-page captures. `browser-results.json`, `pdf-results.json` and `lcp-results.json` contain current compact results. Raw browser/lab logs are ignored. Product screenshot and walkthrough capture provenance is in `../visuals/`; original artwork hashes remain enforced.
 
 ## Release boundary and limitations
