@@ -194,6 +194,14 @@
       "bottom": 61.5
     },
     {
+      "text": "Experience",
+      "href": "#experience",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 17.5,
+      "bottom": 61.5
+    },
+    {
       "text": "Work",
       "href": "#work",
       "outline": "solid",
@@ -238,222 +246,163 @@
       "href": "#work",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 603.078125,
-      "bottom": 651.078125
+      "top": 586.546875,
+      "bottom": 634.546875
     },
     {
       "text": "Résumé ↗",
       "href": "/resume/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 605.078125,
-      "bottom": 649.078125
+      "top": 588.546875,
+      "bottom": 632.546875
+    },
+    {
+      "text": "Full experience and résumé ↗",
+      "href": "/resume/",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 438.234375,
+      "bottom": 482.234375
     },
     {
       "text": "Case study ↗",
       "href": "/projects/harmonic-color-graph/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.125,
-      "bottom": 482.125
+      "top": 437.625,
+      "bottom": 481.625
+    },
+    {
+      "text": "Walkthrough ↗",
+      "href": "/projects/harmonic-color-graph/#walkthrough",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.625,
+      "bottom": 481.625
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/HarmonicColorGraph",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.125,
-      "bottom": 482.125
+      "top": 437.625,
+      "bottom": 481.625
     },
     {
       "text": "Case study ↗",
       "href": "/projects/tonescope/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.984375,
-      "bottom": 481.984375
+      "top": 437.828125,
+      "bottom": 481.828125
+    },
+    {
+      "text": "Walkthrough ↗",
+      "href": "/projects/tonescope/#walkthrough",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 437.828125,
+      "bottom": 481.828125
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/ToneScope",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.984375,
-      "bottom": 481.984375
+      "top": 437.828125,
+      "bottom": 481.828125
     },
     {
       "text": "Case study ↗",
       "href": "/projects/truckerpath-dispatcher-os/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.84375,
-      "bottom": 481.84375
+      "top": 438.21875,
+      "bottom": 482.21875
+    },
+    {
+      "text": "Walkthrough ↗",
+      "href": "/projects/truckerpath-dispatcher-os/#walkthrough",
+      "outline": "solid",
+      "outlineWidth": "2px",
+      "top": 438.21875,
+      "bottom": 482.21875
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/truckerpathpm",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.84375,
-      "bottom": 481.84375
-    },
-    {
-      "text": "Harmonic Color Graph ↗",
-      "href": "/projects/harmonic-color-graph/",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 437.796875,
-      "bottom": 481.796875
-    },
-    {
-      "text": "System design ↗",
-      "href": "/projects/harmonic-color-graph/#system-design",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 510.796875,
-      "bottom": 554.796875
-    },
-    {
-      "text": "ToneScope ↗",
-      "href": "/projects/tonescope/",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 583.796875,
-      "bottom": 627.796875
-    },
-    {
-      "text": "TruckerPath case study ↗",
-      "href": "/projects/truckerpath-dispatcher-os/",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 656.796875,
-      "bottom": 700.796875
+      "top": 438.21875,
+      "bottom": 482.21875
     },
     {
       "text": "siddsan7@gmail.com",
       "href": "mailto:siddsan7@gmail.com",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 844.984375,
-      "bottom": 899.578125
+      "top": 731.125,
+      "bottom": 785.71875
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 850.28125,
-      "bottom": 894.28125
+      "top": 736.421875,
+      "bottom": 780.421875
     },
     {
       "text": "LinkedIn ↗",
       "href": "https://www.linkedin.com/in/siddharth-sanjay/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 850.28125,
-      "bottom": 894.28125
+      "top": 736.421875,
+      "bottom": 780.421875
     },
     {
       "text": "Résumé ↗",
       "href": "/resume/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 850.28125,
-      "bottom": 894.28125
+      "top": 736.421875,
+      "bottom": 780.421875
     },
     {
       "text": "siddharthsanjay.com",
       "href": "https://siddharthsanjay.com",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 849.578125,
-      "bottom": 870.375
-    },
-    {
-      "text": "Skip to contentSiddharth SanjayWorkAboutSkillsContactRésumé ↗SiddharthSanjayAI engineerTools for understanding complex systems.I build AI and software tools for exploring music, understanding signals, and making informed decisions.View work ↓Résumé ↗Music, signals, software.01 / Selected projectsSelected projectsThree explorations in AI, audio, and product engineering.01/Harmonic Color GraphAI / MusicExplore what comes after a chord.Corpus-backed recommendations and grounded explanations, built on inspectable harmonic tools.Typed tools · Grounding · EvaluationConcept illustrationCase study ↗GitHub ↗02/ToneScopeAudio / SystemsInspect a sound before changing it.A Windows guitar-effects workbench for selecting passages, comparing processing, and previewing reversible changes.C++ · Faust · ReactConcept illustrationCase study ↗GitHub ↗03/TruckerPath Dispatcher OSProduct engineeringMake the trade-offs visible.A demo-first logistics product connecting dispatch workflows, explainable load ranking, and experiment planning.Next.js · Load scoring · PM CopilotConcept illustration · Demo workflowCase study ↗GitHub ↗02 / AboutAbout meI’m Siddharth, a computer science graduate from Arizona State University. My work connects AI, software engineering, and product thinking.Music is a recurring thread in my projects. I’m interested in tools that help people explore a complex system, understand its behavior, and make a deliberate choice.03 / ToolkitSkills in practiceAI systemsPython · LangGraph · Tool groundingHarmonic Color Graph ↗SoftwareTypeScript · React · Next.js · FastAPISystem design ↗Audio systemsC++ · Faust · Signal inspectionToneScope ↗ProductWorkflow design · Scoring · Experiment planningTruckerPath case study ↗04 / ContactLet’s talk.siddsan7@gmail.comGitHub ↗LinkedIn ↗Résumé ↗Siddharth Sanjaysiddharthsanjay.com",
-      "href": null,
-      "outline": "none",
-      "outlineWidth": "3px",
-      "top": -2966,
-      "bottom": 900.375
-    },
-    {
-      "text": "Skip to content",
-      "href": "#main",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 12,
-      "bottom": 56.796875
-    },
-    {
-      "text": "Siddharth Sanjay",
-      "href": "#top",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
-    },
-    {
-      "text": "Work",
-      "href": "#work",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
-    },
-    {
-      "text": "About",
-      "href": "#about",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
-    },
-    {
-      "text": "Skills",
-      "href": "#skills",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
-    },
-    {
-      "text": "Contact",
-      "href": "#contact",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
-    },
-    {
-      "text": "Résumé ↗",
-      "href": "/resume/",
-      "outline": "solid",
-      "outlineWidth": "2px",
-      "top": 17.5,
-      "bottom": 61.5
+      "top": 848.71875,
+      "bottom": 869.515625
     }
   ],
   "navigation": [
     {
+      "id": "experience",
+      "active": "Experience",
+      "offset": 99.546875
+    },
+    {
       "id": "work",
       "active": "Work",
-      "offset": 100.078125
+      "offset": 100.234375
     },
     {
       "id": "about",
       "active": "About",
-      "offset": 99.84375
+      "offset": 100.21875
     },
     {
       "id": "skills",
-      "active": "Contact",
-      "offset": 153.609375
+      "active": "Skills",
+      "offset": 100.40625
     },
     {
       "id": "contact",
       "active": "Contact",
-      "offset": 581.796875
+      "offset": 580.9375
     }
   ],
   "axe": [
@@ -480,22 +429,118 @@
       "route": "/projects/harmonic-color-graph/",
       "width": 390,
       "violations": [],
-      "passes": 19,
-      "incomplete": []
+      "passes": 28,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(2) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(4) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(5) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
     },
     {
       "route": "/projects/tonescope/",
       "width": 390,
       "violations": [],
-      "passes": 19,
-      "incomplete": []
+      "passes": 29,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(2) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(4) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
     },
     {
       "route": "/projects/truckerpath-dispatcher-os/",
       "width": 390,
       "violations": [],
-      "passes": 19,
-      "incomplete": []
+      "passes": 32,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                "tr:nth-child(1) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(2) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(3) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "target": [
+                "tr:nth-child(4) > td:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
     },
     {
       "route": "/resume/",
@@ -546,21 +591,21 @@
       "route": "/projects/harmonic-color-graph/",
       "width": 1440,
       "violations": [],
-      "passes": 19,
+      "passes": 27,
       "incomplete": []
     },
     {
       "route": "/projects/tonescope/",
       "width": 1440,
       "violations": [],
-      "passes": 19,
+      "passes": 28,
       "incomplete": []
     },
     {
       "route": "/projects/truckerpath-dispatcher-os/",
       "width": 1440,
       "violations": [],
-      "passes": 19,
+      "passes": 31,
       "incomplete": []
     },
     {
@@ -590,58 +635,20 @@
       "incomplete": []
     }
   ],
-  "performance": {
-    "desktop": {
-      "scores": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100
-      },
-      "metrics": {
-        "first-contentful-paint": "0.3 s",
-        "largest-contentful-paint": "0.4 s",
-        "total-blocking-time": "0 ms",
-        "cumulative-layout-shift": "0",
-        "speed-index": "0.3 s"
-      },
-      "failures": [
-        "unused-javascript",
-        "bf-cache",
-        "cache-insight",
-        "image-delivery-insight",
-        "network-dependency-tree-insight",
-        "render-blocking-insight"
-      ]
-    },
-    "mobile": {
-      "scores": {
-        "performance": 99,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100
-      },
-      "metrics": {
-        "first-contentful-paint": "0.9 s",
-        "largest-contentful-paint": "2.0 s",
-        "total-blocking-time": "10 ms",
-        "cumulative-layout-shift": "0",
-        "speed-index": "0.9 s"
-      },
-      "failures": [
-        "unused-javascript",
-        "bf-cache",
-        "cache-insight",
-        "image-delivery-insight",
-        "network-dependency-tree-insight",
-        "render-blocking-insight"
-      ]
-    }
-  },
+  "performance": {},
   "errors": [],
+  "hiring": {
+    "experienceHeading": {
+      "x": 20,
+      "y": 659.4375,
+      "width": 350,
+      "height": 36.796875
+    },
+    "walkthroughAndCalculator": "Native expansion, full-size capture, source example, changed input, invalid/missing/range input, reset and submit passed"
+  },
   "enhancement": {
-    "loadEventStart": 36.400000005960464,
-    "clientRequestStart": 103
+    "loadEventStart": 119.40000000596046,
+    "clientRequestStart": 286.40000000596046
   },
   "contrast": [
     {
@@ -689,6 +696,12 @@
   ],
   "passiveNavigation": [
     {
+      "id": "experience",
+      "active": "experience",
+      "bottom": false,
+      "hash": ""
+    },
+    {
       "id": "work",
       "active": "work",
       "bottom": false,
@@ -702,8 +715,8 @@
     },
     {
       "id": "skills",
-      "active": "contact",
-      "bottom": true,
+      "active": "skills",
+      "bottom": false,
       "hash": ""
     },
     {
@@ -713,7 +726,7 @@
       "hash": ""
     }
   ],
-  "textZoom": "200% text size at 320 CSS px: no horizontal overflow; 400% reflow uses 320px matrix",
+  "textZoom": "All 5 public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region",
   "noJavaScript": "All 5 routes, work anchor, and project navigation passed",
   "contact": {
     "email": "siddsan7@gmail.com",

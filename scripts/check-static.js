@@ -110,8 +110,20 @@ try {
     person.email,
     ...projects.map((p) => p.name),
     'Skills in practice',
+    'Engineering with teams',
+    'SkipCourse LLC',
+    'Vertex AI',
   ])
     check(home.includes(fact), `homepage raw HTML: ${fact}`)
+  check(home.indexOf('id="experience"') < home.indexOf('id="work"'), 'professional experience precedes personal projects')
+  check(home.includes('href="#experience"'), 'experience has native navigation')
+  for (const project of projects) {
+    const html = await (await fetch(base + `/projects/${project.slug}/`)).text()
+    for (const heading of ['Evidence at a glance', 'A consequential decision', 'Guided walkthrough'])
+      check(html.includes(heading), `${project.name}: ${heading} in raw HTML`)
+    check(html.includes(`blob/${project.caseStudy.revision}/`), `${project.name}: evidence links pin the reviewed revision`)
+    check(html.includes('class="architecture-flow"'), `${project.name}: architecture flow without JavaScript`)
+  }
   for (const project of projects)
     check(
       home.includes(`href="${project.repo}"`),

@@ -32,7 +32,7 @@ for (const path of [
     path === '/'
       ? 'Siddharth Sanjay | AI Engineer'
       : project
-        ? `${project.name} — Case Study | Siddharth Sanjay`
+        ? `${project.caseStudy.title} | Siddharth Sanjay`
         : path === '/resume/'
           ? 'Résumé | Siddharth Sanjay — AI Engineer'
           : archived
@@ -40,11 +40,11 @@ for (const path of [
             : 'Page not found | Siddharth Sanjay'
   const description =
     path === '/'
-      ? `${person.name}, AI engineer and Arizona State University computer science graduate. Explore AI, audio systems, and product engineering projects.`
+      ? `${person.name}, AI engineer and ASU computer science graduate. RAG and Google Cloud work at SkipCourse, grounded AI recommendations, and evaluated assistant systems.`
       : project
         ? project.summary
         : path === '/resume/'
-          ? 'Education, software engineering experience, and selected projects from Siddharth Sanjay. Read the HTML résumé or download the PDF.'
+          ? 'Education, software engineering experience, and featured projects from Siddharth Sanjay. Read the HTML résumé or download the PDF.'
           : archived
             ? `An archived portfolio entry for ${archived.title}. Earlier notes are preserved for reference and have not been reverified for the current portfolio.`
             : 'This page could not be found. Return to Siddharth Sanjay’s portfolio.'
@@ -63,6 +63,7 @@ for (const path of [
       '@type': 'CollegeOrUniversity',
       name: 'Arizona State University',
     },
+    image: `${person.domain}${person.portrait}`,
   }
   const head = `<title>${escape(title)}</title>
     <meta name="description" content="${escape(description)}" />
@@ -74,7 +75,7 @@ for (const path of [
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${person.domain}/social/portfolio.png" />
     <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Siddharth Sanjay. AI engineer. Music, signals, software." />
+    <meta property="og:image:alt" content="Siddharth Sanjay. AI engineer. Tools, evidence, evaluation." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escape(title)}" />
     <meta name="twitter:description" content="${escape(description)}" />

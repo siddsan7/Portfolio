@@ -81,6 +81,12 @@ button:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 4px;
 }
+summary:focus-visible,
+input:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
 ::selection {
   background: var(--lilac);
   color: var(--ink);
@@ -119,6 +125,9 @@ section[id],
   top: 0;
   z-index: 10;
   background: var(--paper);
+}
+.site-main {
+  overflow-wrap: anywhere;
 }
 .header-inner {
   min-height: 80px;
@@ -197,11 +206,11 @@ section[id],
   grid-template-columns: 1.05fr 1fr;
   gap: 40px;
   align-items: center;
-  padding: 65px 24px 64px;
+  padding: 40px 24px 42px;
   min-width: 0;
 }
 .hero h1 {
-  font-size: clamp(76px, 8.5vw, 120px);
+  font-size: clamp(68px, 7.2vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.04em;
 }
@@ -215,8 +224,14 @@ section[id],
   font-size: 26px;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-top: 32px;
+  margin-top: 22px;
   max-width: 520px;
+}
+.hero-credential {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 16px;
 }
 .hero-summary {
   font-size: 19px;
@@ -323,7 +338,7 @@ section[id],
 }
 .panel-strip > p {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: right;
@@ -338,6 +353,10 @@ section[id],
 }
 .panel-copy {
   padding: 10px 0;
+  overflow-wrap: anywhere;
+}
+.section-intro {
+  overflow-wrap: anywhere;
 }
 .project-premise {
   font-size: clamp(27px, 2.8vw, 36px);
@@ -353,7 +372,7 @@ section[id],
 }
 .methods {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   margin-top: 26px;
   line-height: 1.8;
@@ -395,6 +414,7 @@ section[id],
 }
 .panel-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   align-items: flex-end;
   margin-top: 16px;
@@ -424,6 +444,14 @@ section[id],
   grid-column: 1;
   grid-row: 1;
 }
+.portrait {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid var(--rule);
+}
 .music-print {
   display: block;
   width: 100%;
@@ -447,7 +475,7 @@ section[id],
 }
 .skill-list li {
   display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 2.35fr);
   gap: 24px;
   align-items: center;
   border-top: 1px solid var(--rule);
@@ -459,13 +487,8 @@ section[id],
 }
 .skill-list p {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
-}
-.skill-list a {
-  justify-self: end;
-  font-family: var(--mono);
-  font-size: 13px;
 }
 .contact {
   padding-block: 30px 42px;
@@ -560,12 +583,40 @@ section[id],
 .case-header > .arrow-link {
   margin-top: 16px;
 }
-.case-study > .project-visual {
-  max-width: 900px;
+.product-screenshot {
+  max-width: 1120px;
   margin: 36px auto 56px;
+  border: 1px solid var(--rule);
+  background: var(--surface);
 }
-.case-study > .project-visual img {
-  max-height: 440px;
+.product-screenshot > a {
+  display: block;
+}
+.product-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.product-screenshot figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px 28px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.screenshot-caption {
+  flex: 1 1 420px;
+}
+.product-screenshot figcaption > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 .reading-column section {
   margin-top: 38px;
@@ -655,9 +706,293 @@ section[id],
 .not-found p {
   color: var(--muted);
 }
+.experience-list {
+  padding-inline: 24px;
+}
+.experience-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 36px;
+  border-top: 1px solid var(--rule);
+  padding-block: 24px;
+}
+.experience-identity h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.experience-identity p {
+  font-size: 17px;
+}
+.experience-identity .experience-dates {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.experience-entry ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 17px;
+  color: var(--muted);
+}
+.experience-entry li + li {
+  margin-top: 12px;
+}
+.project-status {
+  color: var(--copper);
+  font-family: var(--mono);
+  font-size: 14px;
+  margin-top: 18px;
+}
+.project-proof {
+  border-left: 2px solid var(--rule);
+  padding-left: 14px;
+  margin-top: 12px;
+  font-size: 16px;
+}
+.panel-actions {
+  gap: 12px 24px;
+}
+.case-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 28px;
+  margin: 28px 0 0;
+  padding-block: 20px;
+  border-block: 1px solid var(--rule);
+}
+.case-facts dt,
+.decision-story dt {
+  font-family: var(--mono);
+  color: var(--copper);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.case-facts dd,
+.decision-story dd {
+  margin: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.case-facts dd {
+  font-size: 16px;
+}
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-top: 14px;
+  font-size: 16px;
+}
+.evidence-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 22px 8px;
+  border-block: 1px solid var(--rule);
+}
+.evidence-table {
+  border-collapse: collapse;
+  min-width: 620px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.evidence-table caption {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.evidence-table th,
+.evidence-table td {
+  padding: 14px 10px;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+  font-weight: 400;
+}
+.evidence-table thead {
+  background: var(--surface);
+}
+.evidence-table th:first-child {
+  width: 23%;
+}
+.evidence-table td:nth-child(2) {
+  width: 25%;
+  color: var(--ink);
+}
+.evidence-table td:last-child {
+  color: var(--muted);
+}
+#evidence > .arrow-link {
+  margin-right: 20px;
+  font-size: 15px;
+}
+.architecture-flow {
+  border-block: 1px solid var(--rule);
+  margin-top: 24px;
+  padding-block: 20px;
+}
+.architecture-flow figcaption {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.architecture-flow ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: flow-step;
+  gap: 18px 24px;
+}
+.architecture-flow li {
+  counter-increment: flow-step;
+  padding-left: 12px;
+  border-left: 2px solid var(--copper);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+.architecture-flow li::before {
+  content: counter(flow-step, decimal-leading-zero);
+  display: block;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.flow-boundary {
+  margin-top: 24px;
+  font-size: 15px;
+  padding: 14px 16px;
+  background: var(--surface);
+}
+.decision-story {
+  margin: 0;
+}
+.decision-story > div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 14px;
+  border-top: 1px solid var(--rule);
+}
+.walkthrough-steps {
+  padding: 0;
+  margin-top: 24px;
+  list-style: none;
+}
+.walkthrough-steps details {
+  border-top: 1px solid var(--rule);
+}
+.walkthrough-steps summary {
+  cursor: pointer;
+  min-height: 56px;
+  padding: 16px 8px;
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+.step-number {
+  margin-inline: 8px 16px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--copper);
+}
+.walkthrough-steps details > p {
+  padding: 0 8px 20px;
+}
+.walkthrough-capture {
+  margin-bottom: 20px;
+}
+.walkthrough-capture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+}
+.walkthrough-capture figcaption {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.calculation-example {
+  margin-block: 24px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
+.calculation-example > p {
+  font-size: 16px;
+}
+.net-calculator {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.net-calculator[hidden] {
+  display: none;
+}
+.calculator-limits {
+  grid-column: 1 / -1;
+  font-size: 14px;
+}
+.evidence-hint {
+  display: none;
+  font-size: 14px;
+}
+@media (max-width: 639px) {
+  .evidence-hint { display: block; }
+}
+.net-calculator label {
+  font-size: 15px;
+}
+.net-calculator input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--muted);
+  min-height: 44px;
+  padding: 8px;
+  margin-top: 8px;
+}
+.calculation-result {
+  grid-column: 1 / -1;
+}
+.calculation-result > span,
+.calculation-result p {
+  font-size: 14px;
+}
+.calculation-result output {
+  display: block;
+  font-size: 32px;
+  overflow-wrap: anywhere;
+}
+.net-calculator button {
+  justify-self: start;
+  min-height: 44px;
+  grid-column: 1 / -1;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--muted);
+  padding: 8px 16px;
+  cursor: pointer;
+}
+@media (max-width: 639px) {
+  .experience-list { padding-inline: 0; }
+  .experience-entry { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .case-facts { grid-template-columns: minmax(0, 1fr); }
+  .architecture-flow ol { grid-template-columns: minmax(0, 1fr); }
+  .decision-story > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .net-calculator { grid-template-columns: minmax(0, 1fr); }
+  .hero-credential { font-size: 14px; margin-top: 12px; }
+}
 @media (min-width: 1440px) {
   .hero {
-    padding-block: 72px 76px;
+    padding-block: 44px 48px;
   }
   .panel-body {
     min-height: 430px;
@@ -683,7 +1018,7 @@ section[id],
     gap: 16px;
   }
   .hero h1 {
-    font-size: clamp(68px, 10vw, 100px);
+    font-size: clamp(64px, 8vw, 88px);
   }
   .hero-premise {
     font-size: 23px;
@@ -711,7 +1046,7 @@ section[id],
   }
   .skill-list li {
     padding-inline: 0;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 2.3fr);
     gap: 16px;
   }
   .contact-body {
@@ -761,10 +1096,6 @@ section[id],
   .skill-list li {
     grid-template-columns: 1fr 1.7fr;
   }
-  .skill-list a {
-    grid-column: 2;
-    justify-self: start;
-  }
   .about-body {
     grid-template-columns: 1fr 1.3fr;
   }
@@ -812,19 +1143,19 @@ section[id],
     grid-column: 1 / 3;
     grid-row: 2;
     justify-content: space-between;
-    gap: 12px;
+    gap: 8px;
     padding-bottom: 5px;
   }
   .site-header nav a {
-    font-size: 15px;
+    font-size: 14px;
   }
   .hero {
     grid-template-columns: minmax(0, 1fr);
-    padding: 42px 0 30px;
-    gap: 24px;
+    padding: 26px 0 26px;
+    gap: 16px;
   }
   .hero h1 {
-    font-size: clamp(52px, 14.8vw, 68px);
+    font-size: clamp(46px, 12.5vw, 54px);
     line-height: 1.02;
   }
   .hero .role {
@@ -833,7 +1164,7 @@ section[id],
   }
   .hero-premise {
     font-size: 24px;
-    margin-top: 28px;
+    margin-top: 18px;
   }
   .hero-summary {
     font-size: 17px;
@@ -844,6 +1175,7 @@ section[id],
     margin-top: 24px;
   }
   .hero-art {
+    display: none;
     margin-top: 0;
     padding: 0;
     max-width: 440px;
@@ -851,7 +1183,7 @@ section[id],
     justify-self: center;
   }
   .resonance {
-    max-height: 175px;
+    max-height: 80px;
   }
   .hero-art p {
     margin-top: 0;
@@ -886,7 +1218,7 @@ section[id],
   .panel-strip > p {
     max-width: none;
     margin-left: 0;
-    font-size: 10px;
+    font-size: 13px;
     text-align: left;
   }
   .panel-body {
@@ -900,7 +1232,7 @@ section[id],
     margin-top: 16px;
   }
   .methods {
-    font-size: 11px;
+    font-size: 14px;
   }
   .project-visual {
     margin-inline: -4px;
@@ -936,10 +1268,7 @@ section[id],
     padding-block: 18px;
   }
   .skill-list p {
-    font-size: 12px;
-  }
-  .skill-list a {
-    font-size: 12px;
+    font-size: 14px;
   }
   .contact {
     padding-bottom: 28px;
@@ -974,7 +1303,7 @@ section[id],
   .case-summary {
     font-size: 18px;
   }
-  .case-study > .project-visual {
+  .product-screenshot {
     margin-inline: 0;
     margin-bottom: 36px;
   }

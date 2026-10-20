@@ -3,14 +3,8 @@ import { resume } from './resume.js'
 import Navigation from './Navigation.jsx'
 import { ProjectVisual, Resonance } from './Artwork.jsx'
 import { projects as archivedProjects } from '../data/projects.js'
-
-export function ArrowLink({ href, children, ...props }) {
-  return (
-    <a className="arrow-link" href={href} {...props}>
-      {children} <span aria-hidden="true">↗</span>
-    </a>
-  )
-}
+import ArrowLink from './ArrowLink.jsx'
+import CaseStudy from './CaseStudy.jsx'
 
 function SectionHeading({ number, label, title, children }) {
   return (
@@ -41,7 +35,9 @@ function ProjectPanel({ project, index }) {
         <div className="panel-copy">
           <p className="project-premise">{project.premise}</p>
           <p>{project.summary}</p>
-          <p className="methods">{project.methods}</p>
+          <p className="project-status">{project.caseStudy.status}</p>
+          <p className="project-proof">{project.caseStudy.result}</p>
+          <p className="methods">{project.caseStudy.methods}</p>
         </div>
         <ProjectVisual project={project} />
         <div className="panel-actions">
@@ -51,6 +47,7 @@ function ProjectPanel({ project, index }) {
           >
             Case study
           </ArrowLink>
+          <ArrowLink href={`/projects/${project.slug}/#walkthrough`}>Walkthrough</ArrowLink>
           <ArrowLink
             href={project.repo}
             aria-label={`${project.name} on GitHub`}
@@ -74,6 +71,7 @@ function Home() {
             Sanjay
           </h1>
           <p className="role">{person.role}</p>
+          <p className="hero-credential">ASU Computer Science graduate</p>
           <p className="hero-premise">{person.premise}</p>
           <p className="hero-summary">{person.summary}</p>
           <div className="hero-actions">
@@ -85,16 +83,36 @@ function Home() {
         </div>
         <div className="hero-art">
           <Resonance />
-          <p>Music, signals, software.</p>
+          <p>Tools, evidence, evaluation.</p>
+        </div>
+      </section>
+      <section id="experience" className="experience section">
+        <SectionHeading number="01" label="Experience" title="Engineering with teams">
+          RAG and asynchronous cloud workflows at SkipCourse. Web delivery,
+          mentoring, and stakeholder collaboration at ASU.
+        </SectionHeading>
+        <div className="experience-list">
+          {resume.experience.slice(0, 2).map(job => (
+            <article className="experience-entry" key={job.title}>
+              <div className="experience-identity">
+                <h3>{job.organization}</h3>
+                <p>{job.title}</p>
+                <p className="experience-dates">{job.dates}</p>
+              </div>
+              <ul>{job.bullets.map(bullet => <li key={bullet}>{bullet}</li>)}</ul>
+            </article>
+          ))}
+          <ArrowLink href="/resume/">Full experience and résumé</ArrowLink>
         </div>
       </section>
       <section id="work" className="work section">
         <SectionHeading
-          number="01"
-          label="Selected projects"
-          title="Selected projects"
+          number="02"
+          label="Featured projects"
+          title="Featured projects"
         >
-          Three explorations in AI, audio, and product engineering.
+          AI engineering through grounded recommendations, controlled assistant
+          actions, and explainable decision support.
         </SectionHeading>
         <div className="project-list">
           {projects.map((p, i) => (
@@ -103,7 +121,7 @@ function Home() {
         </div>
       </section>
       <section id="about" className="about section">
-        <SectionHeading number="02" label="About" title="About me" />
+        <SectionHeading number="03" label="About" title="About me" />
         <div className="about-body">
           <div className="biography">
             {person.about.map((p) => (
@@ -111,28 +129,35 @@ function Home() {
             ))}
           </div>
           <div className="about-art">
-            <Resonance print />
+            <img
+              className="portrait"
+              src={person.portrait}
+              width="800"
+              height="800"
+              alt="Siddharth Sanjay smiling in a suit outdoors."
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
       <section id="skills" className="skills section">
         <SectionHeading
-          number="03"
+          number="04"
           label="Toolkit"
           title="Skills in practice"
         />
         <ul className="skill-list">
-          {skills.map(([area, tools, label, href]) => (
+          {skills.map(([area, tools]) => (
             <li key={area}>
               <h3>{area}</h3>
               <p>{tools}</p>
-              <ArrowLink href={href}>{label}</ArrowLink>
             </li>
           ))}
         </ul>
       </section>
       <section id="contact" className="contact section">
-        <SectionHeading number="04" label="Contact" title="Let’s talk." />
+        <SectionHeading number="05" label="Contact" title="Let’s talk." />
         <div className="contact-body">
           <a className="email" href={`mailto:${person.email}`}>
             {person.email}
@@ -145,67 +170,6 @@ function Home() {
         </div>
       </section>
     </>
-  )
-}
-
-function CaseStudy({ project }) {
-  return (
-    <article className="case-study">
-      <a className="back-link" href="/#work">
-        ← Back to selected work
-      </a>
-      <header className="case-header">
-        <p className="eyebrow">{project.category} / Case study</p>
-        <h1>{project.name}</h1>
-        <p className="case-premise">{project.premise}</p>
-        <p className="case-summary">{project.summary}</p>
-        <p className="status">{project.status}</p>
-        <ArrowLink href={project.repo}>Explore the repository</ArrowLink>
-      </header>
-      <ProjectVisual project={project} />
-      <div className="reading-column">
-        <section>
-          <h2>My contribution</h2>
-          <p>{project.contribution}</p>
-        </section>
-        <section>
-          <h2>The problem</h2>
-          <p>{project.problem}</p>
-        </section>
-        {project.sections.map(([heading, text]) => (
-          <section
-            key={heading}
-            id={heading.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-')}
-          >
-            <h2>{heading}</h2>
-            <p>{text}</p>
-          </section>
-        ))}
-        <section className="sources">
-          <h2>Source evidence</h2>
-          <p>
-            Read the public implementation and supporting documentation below.
-          </p>
-          <ul>
-            {project.sources.map(([label, path]) => (
-              <li key={path}>
-                <ArrowLink href={`${project.repo}/blob/main/${path}`}>
-                  {label}
-                </ArrowLink>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <aside className="next-project">
-          <p className="eyebrow">Continue exploring</p>
-          <ArrowLink
-            href={`/projects/${projects[(projects.indexOf(project) + 1) % projects.length].slug}/`}
-          >
-            {projects[(projects.indexOf(project) + 1) % projects.length].name}
-          </ArrowLink>
-        </aside>
-      </div>
-    </article>
   )
 }
 
@@ -262,7 +226,7 @@ function Resume() {
         ))}
       </section>
       <section>
-        <h2>Selected projects</h2>
+        <h2>Featured projects</h2>
         {projects.map((p) => (
           <div className="resume-project" key={p.slug}>
             <h3>
@@ -276,9 +240,9 @@ function Resume() {
       <section>
         <h2>Skills in practice</h2>
         <ul>
-          {skills.map(([area, tools, label, href]) => (
+          {skills.map(([area, tools]) => (
             <li key={area}>
-              {area}: {tools}. <a href={href}>{label}</a>.
+              {area}: {tools}.
             </li>
           ))}
         </ul>
@@ -302,7 +266,7 @@ function NotFound() {
         Back to home
       </a>
       <p>
-        <a href="/#work">Explore selected projects</a> or{' '}
+        <a href="/#work">Explore featured projects</a> or{' '}
         <a href={`mailto:${person.email}`}>contact Siddharth</a>.
       </p>
     </section>
@@ -313,7 +277,7 @@ function ArchivedProject({ project }) {
   return (
     <article className="reading-column archived-project">
       <a className="back-link" href="/#work">
-        ← Back to selected work
+        ← Back to featured projects
       </a>
       <p className="eyebrow">Previous portfolio / Archive</p>
       <h1>{project.title}</h1>
@@ -330,7 +294,7 @@ function ArchivedProject({ project }) {
         <p>{project.caseStudy.technical}</p>
       </section>
       <p>
-        <a href="/#work">See current selected projects</a>.
+        <a href="/#work">See current featured projects</a>.
       </p>
     </article>
   )
@@ -354,7 +318,7 @@ export function Site({ path = '/' }) {
         {path === '/' ? (
           <Home />
         ) : project ? (
-          <CaseStudy project={project} />
+          <CaseStudy project={project} nextProject={projects[(projects.indexOf(project) + 1) % projects.length]} />
         ) : path === '/resume/' ? (
           <Resume />
         ) : archived ? (

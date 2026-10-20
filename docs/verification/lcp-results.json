@@ -24,26 +24,26 @@
   "runs": [
     {
       "run": 1,
-      "lcpMs": 1958.446,
-      "fcpMs": 908.4459999999999,
+      "lcpMs": 1657.4294,
+      "fcpMs": 907.4294,
       "cls": 0,
-      "tbtMs": 10,
-      "performance": 99
+      "tbtMs": 22,
+      "performance": 100
     },
     {
       "run": 2,
-      "lcpMs": 1955.2523999999999,
-      "fcpMs": 905.2524000000001,
+      "lcpMs": 2259.2526,
+      "fcpMs": 1207.7105000000001,
       "cls": 0,
-      "tbtMs": 8,
-      "performance": 99
+      "tbtMs": 11,
+      "performance": 98
     },
     {
       "run": 3,
-      "lcpMs": 1805.1006000000002,
-      "fcpMs": 905.1006,
+      "lcpMs": 1656.3143,
+      "fcpMs": 906.3143,
       "cls": 0,
-      "tbtMs": 9,
+      "tbtMs": 21,
       "performance": 100
     }
   ]
