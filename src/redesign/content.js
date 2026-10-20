@@ -1,4 +1,5 @@
 import { caseStudies } from './caseStudies.js'
+import { resumeUrl } from './resume.js'
 
 export const person = {
   name: 'Siddharth Sanjay',
@@ -7,6 +8,7 @@ export const person = {
   email: 'siddsan7@gmail.com',
   github: 'https://github.com/siddsan7',
   linkedin: 'https://www.linkedin.com/in/siddharth-sanjay/',
+  resume: resumeUrl,
   portrait: '/assets/profile/siddharth-linkedin.webp',
   premise: 'RAG pipelines and grounded AI applications.',
   summary:

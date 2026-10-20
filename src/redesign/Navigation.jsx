@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
+import { resumeUrl } from './resume.js'
 
 const sections = ['experience', 'work', 'about', 'skills', 'contact']
 
@@ -84,7 +85,7 @@ export default function Navigation({ home = false }) {
             </a>
           ))}
         </nav>
-        <a className="resume-nav arrow-link" href="/resume/">
+        <a className="resume-nav arrow-link" href={resumeUrl}>
           Résumé <span aria-hidden="true">↗</span>
         </a>
       </div>
