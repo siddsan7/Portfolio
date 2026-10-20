@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 
-const sections = ['work', 'about', 'skills', 'contact']
+const sections = ['experience', 'work', 'about', 'skills', 'contact']
 
 export default function Navigation({ home = false }) {
   const [active, setActive] = useState('')

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 576" fill="none">
+<rect width="960" height="576" fill="#e7ebe4"/>
+<g stroke="#8f9d93" stroke-width="1.2" opacity=".38"><path d="M-30 75C85 140 99 27 216 76S365 175 454 84 662 24 717 97 866 179 1000 98M-30 244C120 220 162 350 278 270S423 177 525 270 709 330 778 250 878 212 1000 302M-30 370C125 308 166 428 296 365S442 304 571 356 790 431 1000 346M108-20C164 63 74 171 173 223S282 325 198 428M397-20C334 88 455 125 396 239S303 356 418 430M696-20C619 75 732 149 672 234S580 347 692 426M892-20C812 80 911 133 847 238S825 352 894 427"/></g>
+<path d="M0 203C149 124 184 195 304 130S448 166 544 120 739 207 960 81M70 400C162 311 195 375 308 309S457 378 541 306 734 392 910 298" stroke="#79877f" stroke-width="1.5" stroke-dasharray="6 8" opacity=".7"/>
+<path d="M114 288C165 277 151 240 209 233S264 143 350 141 421 236 505 247 593 306 673 266 722 279 792 264" stroke="#a64c30" stroke-width="5" stroke-linecap="round"/>
+<g fill="#f6f2ec" stroke="#a64c30" stroke-width="4"><circle cx="114" cy="288" r="10"/><circle cx="350" cy="141" r="10"/><circle cx="792" cy="264" r="10"/></g>
+<g fill="#9876c1"><path d="M350 79c-15 0-27 12-27 27 0 19 27 42 27 42s27-23 27-42c0-15-12-27-27-27Z"/><path d="M792 202c-15 0-27 12-27 27 0 19 27 42 27 42s27-23 27-42c0-15-12-27-27-27Z"/></g>
+<g fill="#f6f2ec"><circle cx="350" cy="106" r="9"/><circle cx="792" cy="229" r="9"/></g>
+<g transform="translate(290 314)" stroke="#e7ebe4" stroke-width="2"><rect x="0" y="0" width="46" height="28" rx="2" fill="#67527f"/><path d="M46 8h16l12 12v14H46Z" fill="#67527f"/><path d="M53 13h7l8 9H53Z" fill="#e7ebe4"/><circle cx="15" cy="34" r="7" fill="#67527f"/><circle cx="61" cy="34" r="7" fill="#67527f"/></g>
+<path d="M32 417H928" stroke="#a6b1a8"/>
+<g fill="#f6f2ec" stroke="#8f9d93" stroke-width="1.5"><rect x="58" y="454" width="254" height="64" rx="5"/><rect x="352" y="454" width="254" height="64" rx="5"/><rect x="646" y="454" width="254" height="64" rx="5"/></g>
+<g fill="#302438" font-family="Arial,sans-serif" font-size="21" text-anchor="middle"><text x="185" y="494">Route fit</text><text x="479" y="494">Driver constraints</text><text x="773" y="494">Load ranking</text></g>
+</svg>

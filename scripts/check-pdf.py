@@ -25,7 +25,7 @@ for job in data["resume"]["experience"]:
     expected.extend([job["title"], job["organization"], job["dates"], *job["bullets"]])
 for project in data["projects"]:
     expected.extend([project["name"], project["summary"], project["methods"]])
-for area, tools, label, href in data["skills"]:
+for area, tools in data["skills"]:
     expected.extend([area, tools])
 for fact in expected:
     assert normalize(fact) in text, f"Missing PDF text: {fact}"

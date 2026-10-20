@@ -4,4 +4,4 @@
 - [Architecture](architecture.md): build, runtime, content, serving and check map.
 - [Project research](project-research.md): repository evidence and scoped limitations.
 
-Current code wins over historical guidance. See docs/verification/report.md for actual redesign results. Deployment/DNS still require owner review; merge after council review is authorized for this redesign.
+Current code wins over historical guidance. See docs/hiring-refresh.md and docs/verification/report.md for the current hiring refresh. Earlier production/domain release is complete; this change requires owner PR review and merge. No new deployment or merge is authorized. See working-state.md for current state.

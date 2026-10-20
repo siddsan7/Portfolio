@@ -28,6 +28,7 @@ const result = {
   axe: [],
   performance: {},
   errors: [],
+  hiring: {},
 }
 try {
   const context = await browser.newContext({
@@ -144,7 +145,7 @@ try {
     )
     await page.setViewportSize({ width: 1200, height: 630 })
     await page.setContent(
-      `<style>@font-face{font-family:Karrik;src:url(data:font/woff2;base64,${font})}*{box-sizing:border-box}body{margin:0;background:#f6f2ec;color:#302438;font-family:Karrik;padding:60px 72px}main{border-top:1px solid #d2ccd1;border-bottom:1px solid #d2ccd1;height:510px;padding-top:68px}h1{font-size:90px;font-weight:400;letter-spacing:-3px;line-height:1.05;margin:0}p{font-size:32px;margin:28px 0}.role{color:#a64c30;font-size:42px}.domain{font-size:22px;color:#675f6d;margin-top:64px}</style><main><h1>Siddharth Sanjay</h1><p class="role">AI engineer</p><p>Music, signals, software.</p><p class="domain">siddharthsanjay.com</p></main>`,
+      `<style>@font-face{font-family:Karrik;src:url(data:font/woff2;base64,${font})}*{box-sizing:border-box}body{margin:0;background:#f6f2ec;color:#302438;font-family:Karrik;padding:60px 72px}main{border-top:1px solid #d2ccd1;border-bottom:1px solid #d2ccd1;height:510px;padding-top:68px}h1{font-size:90px;font-weight:400;letter-spacing:-3px;line-height:1.05;margin:0}p{font-size:32px;margin:28px 0}.role{color:#a64c30;font-size:42px}.domain{font-size:22px;color:#675f6d;margin-top:64px}</style><main><h1>Siddharth Sanjay</h1><p class="role">AI engineer</p><p>Tools, evidence, evaluation.</p><p class="domain">siddharthsanjay.com</p></main>`,
     )
     await page.evaluate(() => document.fonts.ready)
     await page.screenshot({ path: 'public/social/portfolio.png' })
@@ -204,7 +205,8 @@ try {
   )
   await page.goto(base)
   const keyboard = []
-  for (let i = 0; i < 32; i++) {
+  const focusableCount = await page.locator('a[href], button:not([disabled]), input:not([disabled]), summary, [tabindex="0"]').count()
+  for (let i = 0; i < focusableCount; i++) {
     await page.keyboard.press('Tab')
     keyboard.push(
       await page.evaluate(() => {
@@ -229,7 +231,7 @@ try {
   )
   // Scroll observation must work without clicks or history changes.
   result.passiveNavigation = []
-  for (const id of ['work', 'about', 'skills', 'contact']) {
+  for (const id of ['experience', 'work', 'about', 'skills', 'contact']) {
     await page.evaluate((id) => {
       const target = document.getElementById(id)
       const header = document
@@ -253,7 +255,7 @@ try {
     assert(state.hash === '', 'passive scrolling must not write history')
     result.passiveNavigation.push({ id, ...state })
   }
-  for (const id of ['work', 'about', 'skills', 'contact']) {
+  for (const id of ['experience', 'work', 'about', 'skills', 'contact']) {
     await page.locator(`nav a[href="#${id}"]`).click()
     await page.waitForTimeout(120)
     const active = await page
@@ -311,10 +313,62 @@ try {
   )
 
   // 400% page-zoom reflow is equivalent to a 320 CSS-pixel layout at 1280 physical pixels.
+  await page.setViewportSize({ width: 390, height: 844 })
+  await visit(base)
+  await page.evaluate(() => document.fonts.ready)
+  const experienceHeading = await page.locator('#experience h2').boundingBox()
+  assert(experienceHeading.y + experienceHeading.height <= 844, 'experience heading is visible on the first mobile screen')
+  assert(await page.locator('#experience').textContent().then(text => text.includes('SkipCourse') && text.includes('Pub/Sub')), 'professional AI experience is visible on homepage')
+  assert(await page.locator('#skills a').count() === 0, 'skills remain link-free as requested')
+  assert(await page.locator('.skill-list p').first().evaluate(el => parseFloat(getComputedStyle(el).fontSize)) >= 14, 'mobile skills are at least 14px')
+  result.hiring.experienceHeading = experienceHeading
+
+  await visit(`${base}/projects/tonescope/`)
+  const secondStep = page.locator('.walkthrough-steps details').nth(1)
+  assert(await secondStep.getAttribute('open') === null, 'second walkthrough step starts collapsed')
+  await secondStep.locator('summary').click()
+  assert(await secondStep.getAttribute('open') !== null, 'native walkthrough opens')
+  const captureLink = secondStep.locator('a')
+  await captureLink.locator('img').evaluate(image => image.decode())
+  await captureLink.click()
+  assert(page.url().endsWith('/assets/walkthroughs/tonescope-preview.webp'), 'walkthrough opens real full-size capture')
+
+  await visit(`${base}/projects/truckerpath-dispatcher-os/`)
+  const calculator = page.locator('[data-net-calculator]')
+  await calculator.waitFor({ state: 'visible' })
+  const estimate = calculator.locator('output')
+  assert(await estimate.textContent() === '$1,455.00', 'source-test calculation matches 1455')
+  await calculator.locator('[name="deadhead"]').fill('250')
+  assert(await estimate.textContent() === '$1,237.50', 'deadhead changes the illustrative net estimate')
+  await calculator.locator('[name="fuel"]').fill('-1')
+  assert(await estimate.textContent() === 'Check the inputs', 'negative input is rejected')
+  await calculator.locator('[name="fuel"]').fill('')
+  assert(await estimate.textContent() === 'Check the inputs', 'missing input is rejected')
+  await calculator.getByRole('button', { name: 'Reset example' }).click()
+  await page.waitForFunction(() => document.querySelector('[data-net-calculator] output').textContent === '$1,455.00')
+  await calculator.locator('[name="payout"]').fill('1000001')
+  assert(await estimate.textContent() === 'Check the inputs', 'out-of-range input is rejected')
+  assert(await calculator.locator('[name="payout"]').getAttribute('aria-invalid') === 'true', 'invalid field is identified to assistive technology')
+  assert((await calculator.locator('[data-calculator-message]').textContent()).includes('Payout'), 'error names the field to correct')
+  assert(await calculator.locator('#calculator-limits').isVisible(), 'accepted input ranges and precision are visible')
+  await calculator.locator('[name="payout"]').fill('2000.001')
+  assert(await estimate.textContent() === 'Check the inputs', 'invalid precision is rejected')
+  await calculator.getByRole('button', { name: 'Reset example' }).click()
+  await page.waitForFunction(() => document.querySelector('[data-net-calculator] output').textContent === '$1,455.00')
+  // The output element resets natively before the deferred validation update.
+  // Wait for that update as well as the displayed amount.
+  await page.waitForFunction(() => document.querySelector('[name="payout"]').getAttribute('aria-invalid') === 'false')
+  assert(await calculator.locator('[name="payout"]').inputValue() === '2000', 'reset restores the original payout and clears its field error')
+  const calculatorUrl = page.url()
+  await calculator.locator('[name="payout"]').press('Enter')
+  assert(page.url() === calculatorUrl, 'calculator submit stays on the case study')
+  result.hiring.walkthroughAndCalculator = 'Native expansion, full-size capture, source example, changed input, invalid/missing/range input, reset and submit passed'
+
   await page.setViewportSize({ width: 320, height: 900 })
-  await page.goto(base)
+  for (const route of routes) {
+  await visit(base + route)
   await page.evaluate(() => {
-    const sizes = [...document.querySelectorAll('h1,h2,h3,p,a,figcaption')].map(
+    const sizes = [...document.querySelectorAll('h1,h2,h3,p,a,figcaption,dt,dd,th,td,summary,label,input,output,button')].map(
       (el) => [el, parseFloat(getComputedStyle(el).fontSize)],
     )
     for (const [el, size] of sizes) el.style.fontSize = `${size * 2}px`
@@ -334,8 +388,9 @@ try {
     enlarged.scrollWidth <= enlarged.width,
     `200% text size at narrow width: ${JSON.stringify(enlarged.overflow)}`,
   )
+  }
   result.textZoom =
-    '200% text size at 320 CSS px: no horizontal overflow; 400% reflow uses 320px matrix'
+    'All 5 public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region'
 
   const noJS = await browser.newContext({
     javaScriptEnabled: false,
@@ -346,6 +401,11 @@ try {
     await raw.goto(base + route)
     assert(await raw.locator('main h1').isVisible(), `${route}: no-JS heading`)
   }
+  await raw.goto(base + '/projects/truckerpath-dispatcher-os/')
+  assert(!await raw.locator('[data-net-calculator]').isVisible(), 'unenhanced calculator stays hidden without JavaScript')
+  assert((await raw.locator('.calculation-example').textContent()).includes('$1,455'), 'source calculation remains readable without JavaScript')
+  await raw.locator('.walkthrough-steps summary').nth(1).click()
+  assert(await raw.locator('.walkthrough-steps details').nth(1).getAttribute('open') !== null, 'walkthrough works without JavaScript')
   await raw.goto(base)
   await raw.locator('a[href="#work"]').first().click()
   assert(new URL(raw.url()).hash === '#work', 'no-JS work navigation')

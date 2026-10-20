@@ -11,7 +11,7 @@ Reviewed tree: 1db9cbf6a2cc57c34e76ec2f9ff862a5b7e3aa38.
 - Next.js frontend and FastAPI backend. Typed harmonic tools are shared across deterministic services and the LangGraph/Claude assistant; tools carry fact IDs/evidence. MCP exposes the tools too.
 - Explanations undergo grounding validation, one repair attempt, then deterministic fallback. Streaming partial text follows validation. Rate limits, conservative cost reservations, and audit records bound model use.
 - Recommendation source implements offline-trained feature weights, bounded user intent, plausibility filtering, and diversity selection. Do not reduce this project to a chatbot wrapper.
-- Dated production evaluation documents 40 cases, 100% schema validity/routing/tool correctness, 75% intent match, and a predeclared ten-query route-balanced median of 7,250.5 ms. Recommend-only median was 10,734 ms and failed the 8-second target. These are scoped, historical reported results, not general guarantees or current independent measurements.
+- Dated production evaluation documents 40 cases, 100% schema validity/routing/tool correctness, and 75% intent match on only 12 intent-scored cases (9/12). A predeclared ten-query route-balanced median was 7,250.5 ms. The ten recommendation queries had a 10,734 ms median and failed the 8-second target; 12/40 responses used labeled fallbacks. These are scoped, historical reported results, not general guarantees or current independent measurements. Do not describe the intent metric as 30/40 or as a human musical-satisfaction measure.
 - README mixes old future-phase text/open gates with newer implemented features. Reconcile against dated evidence before publishing status or performance claims.
 
 Sources:
