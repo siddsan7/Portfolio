@@ -193,39 +193,39 @@ export const projects = [
 export const skills = [
   [
     'AI engineering',
-    'Python · LangGraph · Claude · Gemini · MCP · Typed tools · Grounded generation',
+    'Agentic workflows · Tool calling & structured outputs · Context engineering · Python · LangGraph · MCP · Grounded generation · Claude & Gemini APIs · Model selection and routing · Prompt caching · Multi-agent orchestration',
   ],
   [
     'Retrieval & data',
-    'RAG · Embeddings · Vector similarity search · Clustering · PostgreSQL · Redis',
+    'RAG pipelines · Document chunking · Embeddings · Semantic / vector search · Retrieval evaluation · PostgreSQL · Redis · Clustering · Hybrid search · Reranking · Metadata filtering',
   ],
   [
     'Cloud & pipelines',
-    'Google Cloud · Vertex AI · Cloud Functions Gen2 · Firestore · Pub/Sub · Asynchronous workflows',
+    'Google Cloud · Event-driven architecture · Asynchronous workflows · Serverless microservices · Pub/Sub · Vertex AI · Cloud Functions Gen2 · Firestore · Idempotent processing · Bounded retries and dead-letter queues · Docker',
   ],
   [
     'Evaluation & reliability',
-    'Schema validation · Intent evaluation · Latency measurement · Deterministic fallbacks · Rate limits · Cost controls · Audit records',
+    'Task-specific evals · Tool-use & intent evaluation · Grounding checks · Schema validation · Latency & cost benchmarking · Deterministic fallbacks · Rate limits · Audit logging · Human-calibrated LLM judges · Held-out regression suites',
   ],
   [
     'Full-stack engineering',
-    'TypeScript · React · Next.js · FastAPI · API routes · Tailwind CSS · Native/UI integration',
+    'TypeScript · React · Next.js · Python / FastAPI · API design & integration · Responsive, accessible interfaces · Tailwind CSS · Native/web integration',
   ],
   [
     'Recommendations & decisions',
-    'Feature-weighted ranking · Plausibility filtering · Diversity selection · Explainable scoring · Constraint handling',
+    'Recommendation systems · Feature engineering · Weighted ranking · Constraint-aware scoring · Explainable recommendations · Diversity selection · Personalization',
   ],
   [
     'Audio systems',
-    'C++20 · JUCE · Faust · DSP · WAV rendering · Signal inspection · Aligned comparison',
+    'C++20 · Digital signal processing · JUCE · Faust · Audio rendering · Signal analysis · Audio comparison · Native application development',
   ],
   [
     'Verification & state control',
-    'Independent numerical evaluation · Adversarial testing · Mutation testing · Revision-bound proposals · Stale-state checks · Undo',
+    'Adversarial testing · Mutation testing · Independent numerical validation · State consistency checks · Human-in-the-loop controls · Reversible actions · Regression testing',
   ],
   [
     'Product',
-    'Workflow design · Scoring · Experiment planning · Feedback synthesis · Hypothesis development · PRD drafting',
+    'Problem framing · Feedback synthesis · Experiment planning · Success-metric definition · Technical tradeoffs · Cross-functional collaboration · Workflow design · Rapid prototyping · End-to-end feature development · UX iteration',
   ],
 ]
 
