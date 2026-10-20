@@ -1,4 +1,4 @@
-// Transcribed from the owner-supplied PDF on 2026-10-19. Dates follow the source.
+// Transcribed from the owner-supplied PDF; ASU end date corrected by the owner on 2026-10-20.
 // Quantitative claims and unrelated older projects are omitted from this concise edition.
 export const resume = {
   education:
@@ -17,7 +17,7 @@ export const resume = {
     {
       title: 'Experiential Learning Technology and Program Lead',
       organization: 'University College, Arizona State University',
-      dates: 'January 2025 – present',
+      dates: 'January 2025 – May 2026',
       bullets: [
         'Created, redesigned, and maintained University College webpages, and mentored interns in Drupal and web development.',
         'Coordinated outreach for Elevate and ELI through event planning, tabling, and stakeholder collaboration.',

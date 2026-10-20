@@ -34,7 +34,7 @@ Eighteen unrelated legacy files are preserved byte-for-byte against ignored outp
 
 Existing production was released separately at main81889fee on siddharthsanjay.com (apex/www TLS and redirects verified previously). Those live checks do not verify this change. Git-triggered deployment remains disabled. After owner review/merge and separate release authority, check live statuses/metadata/headers/assets, redirects and field behavior.
 
-Owner evidence gaps: SkipCourse ownership/approved measured outcomes/deployment scope; ASU current status and concrete mentoring example; production responsibility/leadership for higher seniority; Search Console and field performance; human screen-reader checks. Do not fabricate them.
+Owner confirmed May 2026 as the ASU role end date on October 20; homepage and résumé share the corrected date. Remaining evidence gaps: SkipCourse ownership/approved measured outcomes/deployment scope; concrete ASU mentoring example; production responsibility/leadership for higher seniority; Search Console and field performance; human screen-reader checks. Do not fabricate them.
 
 ## Next action
 

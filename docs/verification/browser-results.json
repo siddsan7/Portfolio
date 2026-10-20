@@ -647,8 +647,8 @@
     "walkthroughAndCalculator": "Native expansion, full-size capture, source example, changed input, invalid/missing/range input, reset and submit passed"
   },
   "enhancement": {
-    "loadEventStart": 47.900000005960464,
-    "clientRequestStart": 127.30000001192093
+    "loadEventStart": 56.79999998211861,
+    "clientRequestStart": 147.40000000596046
   },
   "contrast": [
     {

@@ -33,7 +33,7 @@ Owner objective: turn the hiring review into actionable work, implement it, obta
 These are substantive evidence gaps, not permission to fabricate metrics or blockers to presenting the verified work:
 
 - SkipCourse: precise personal subsystem ownership, previous bottleneck, approved baseline/result, deployment/usage scope and permission to disclose. The supplied résumé supports the implemented deliverables, but no quantitative impact was established by this review.
-- ASU: current employment status, accepted mentoring or stakeholder example, shipped-page links and any defensible scale figures. Keep supplied dates until the owner supplies a correction.
+- ASU: accepted mentoring or stakeholder example, shipped-page links and any defensible scale figures. Owner confirmed May 2026 as the end date on October 20, 2026; homepage and résumé share that correction.
 - If targeting midlevel/senior roles: documented sustained production responsibility, incidents, team influence and outcomes beyond the website. Presentation cannot create experience that has not been supplied.
 - Owner accounts: actual search indexing/Search Console results, current role/location preferences and any release authorization. Do not add job-search language or work-authorization assumptions.
 
