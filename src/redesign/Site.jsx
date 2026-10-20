@@ -78,7 +78,7 @@ function Home() {
             <a className="primary" href="#work">
               View work <span aria-hidden="true">↓</span>
             </a>
-            <ArrowLink href="/resume/">Résumé</ArrowLink>
+            <ArrowLink href={person.resume}>Résumé</ArrowLink>
           </div>
         </div>
         <div className="hero-art">
@@ -165,7 +165,7 @@ function Home() {
           <div className="contact-links">
             <ArrowLink href={person.github}>GitHub</ArrowLink>
             <ArrowLink href={person.linkedin}>LinkedIn</ArrowLink>
-            <ArrowLink href="/resume/">Résumé</ArrowLink>
+            <ArrowLink href={person.resume}>Résumé</ArrowLink>
           </div>
         </div>
       </section>
@@ -185,8 +185,8 @@ function Resume() {
         <p className="role">{person.role}</p>
         <p>{person.summary}</p>
         <div className="resume-actions">
-          <a className="primary" href="/Siddharth-Sanjay-Resume.pdf" download>
-            Download résumé PDF <span aria-hidden="true">↓</span>
+          <a className="primary" href={person.resume}>
+            View résumé <span aria-hidden="true">↗</span>
           </a>
           <ArrowLink href={`mailto:${person.email}`}>{person.email}</ArrowLink>
         </div>
