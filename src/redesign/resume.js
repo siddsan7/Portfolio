@@ -1,5 +1,5 @@
-// Transcribed from the owner-supplied PDF; ASU end date corrected by the owner on 2026-10-20.
-// Quantitative claims and unrelated older projects are omitted from this concise edition.
+// Transcribed from the owner-supplied PDF; ASU end date and bullets updated by the owner on 2026-10-20.
+// Unrelated older projects and unconfirmed quantitative claims are omitted.
 export const resume = {
   education:
     'Bachelor of Science in Computer Science, Arizona State University',
@@ -19,8 +19,9 @@ export const resume = {
       organization: 'University College, Arizona State University',
       dates: 'January 2025 – May 2026',
       bullets: [
-        'Created, redesigned, and maintained University College webpages, and mentored interns in Drupal and web development.',
-        'Coordinated outreach for Elevate and ELI through event planning, tabling, and stakeholder collaboration.',
+        'Led creation, redesign, and maintenance of University College webpages serving 5,000+ users.',
+        'Mentored interns in Drupal and web development, guiding webpage design, restructuring, and optimization.',
+        'Coordinated outreach for Elevate and ELI through event planning, tabling, and stakeholder collaboration for 1000+ students.',
       ],
     },
     {

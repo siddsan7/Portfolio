@@ -247,11 +247,6 @@ function Resume() {
           ))}
         </ul>
       </section>
-      <p className="resume-note">
-        This concise edition uses the supplied résumé for education and
-        experience, and public repository evidence for the featured projects.{' '}
-        <a href={person.resumeSource}>Original résumé source</a>.
-      </p>
     </article>
   )
 }
