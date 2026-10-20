@@ -262,120 +262,120 @@
       "href": "/resume/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.234375,
-      "bottom": 482.234375
+      "top": 438.421875,
+      "bottom": 482.421875
     },
     {
       "text": "Case study ↗",
       "href": "/projects/harmonic-color-graph/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.625,
-      "bottom": 481.625
+      "top": 437.8125,
+      "bottom": 481.8125
     },
     {
       "text": "Walkthrough ↗",
       "href": "/projects/harmonic-color-graph/#walkthrough",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.625,
-      "bottom": 481.625
+      "top": 437.8125,
+      "bottom": 481.8125
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/HarmonicColorGraph",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.625,
-      "bottom": 481.625
+      "top": 437.8125,
+      "bottom": 481.8125
     },
     {
       "text": "Case study ↗",
       "href": "/projects/tonescope/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.828125,
-      "bottom": 481.828125
+      "top": 438.015625,
+      "bottom": 482.015625
     },
     {
       "text": "Walkthrough ↗",
       "href": "/projects/tonescope/#walkthrough",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.828125,
-      "bottom": 481.828125
+      "top": 438.015625,
+      "bottom": 482.015625
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/ToneScope",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 437.828125,
-      "bottom": 481.828125
+      "top": 438.015625,
+      "bottom": 482.015625
     },
     {
       "text": "Case study ↗",
       "href": "/projects/truckerpath-dispatcher-os/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.21875,
-      "bottom": 482.21875
+      "top": 438.40625,
+      "bottom": 482.40625
     },
     {
       "text": "Walkthrough ↗",
       "href": "/projects/truckerpath-dispatcher-os/#walkthrough",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.21875,
-      "bottom": 482.21875
+      "top": 438.40625,
+      "bottom": 482.40625
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7/truckerpathpm",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 438.21875,
-      "bottom": 482.21875
+      "top": 438.40625,
+      "bottom": 482.40625
     },
     {
       "text": "siddsan7@gmail.com",
       "href": "mailto:siddsan7@gmail.com",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 731.125,
-      "bottom": 785.71875
+      "top": 731.3125,
+      "bottom": 785.90625
     },
     {
       "text": "GitHub ↗",
       "href": "https://github.com/siddsan7",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 736.421875,
-      "bottom": 780.421875
+      "top": 736.609375,
+      "bottom": 780.609375
     },
     {
       "text": "LinkedIn ↗",
       "href": "https://www.linkedin.com/in/siddharth-sanjay/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 736.421875,
-      "bottom": 780.421875
+      "top": 736.609375,
+      "bottom": 780.609375
     },
     {
       "text": "Résumé ↗",
       "href": "/resume/",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 736.421875,
-      "bottom": 780.421875
+      "top": 736.609375,
+      "bottom": 780.609375
     },
     {
       "text": "siddharthsanjay.com",
       "href": "https://siddharthsanjay.com",
       "outline": "solid",
       "outlineWidth": "2px",
-      "top": 848.71875,
-      "bottom": 869.515625
+      "top": 848.90625,
+      "bottom": 869.703125
     }
   ],
   "navigation": [
@@ -387,22 +387,22 @@
     {
       "id": "work",
       "active": "Work",
-      "offset": 100.234375
+      "offset": 100.421875
     },
     {
       "id": "about",
       "active": "About",
-      "offset": 100.21875
+      "offset": 100.40625
     },
     {
       "id": "skills",
       "active": "Skills",
-      "offset": 100.40625
+      "offset": 99.59375
     },
     {
       "id": "contact",
       "active": "Contact",
-      "offset": 580.9375
+      "offset": 581.125
     }
   ],
   "axe": [
@@ -546,7 +546,7 @@
       "route": "/resume/",
       "width": 390,
       "violations": [],
-      "passes": 18,
+      "passes": 17,
       "incomplete": [
         {
           "id": "color-contrast",
@@ -612,7 +612,7 @@
       "route": "/resume/",
       "width": 1440,
       "violations": [],
-      "passes": 18,
+      "passes": 17,
       "incomplete": [
         {
           "id": "color-contrast",
@@ -647,8 +647,8 @@
     "walkthroughAndCalculator": "Native expansion, full-size capture, source example, changed input, invalid/missing/range input, reset and submit passed"
   },
   "enhancement": {
-    "loadEventStart": 56.79999998211861,
-    "clientRequestStart": 147.40000000596046
+    "loadEventStart": 29.099999994039536,
+    "clientRequestStart": 83.2999999821186
   },
   "contrast": [
     {

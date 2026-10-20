@@ -4,6 +4,8 @@
 
 ## Scope and factual boundaries
 
+Latest résumé copy update: the owner supplied the University College bullets about webpages serving 5,000+ users, mentoring interns and outreach for 1000+ students. The homepage, HTML résumé and PDF share those exact bullets and retain May 2026 end dates. The explanatory résumé footer and original Drive-source link are removed. These scale figures are owner supplied, not independently measured outcomes. A fresh read-only reviewer confirmed the exact bullet order, all remaining PDF sections, two-page layout and seven contact/project links; no blocking finding.
+
 The refresh surfaces supplied professional experience, expands supported technical skills, standardizes case studies, and adds evidence tables, architecture flows, decision stories and guided examples. It includes the previously requested LinkedIn portrait, real product screenshots and sharp homepage concepts. See `../hiring-refresh.md` for the acceptance matrix and remaining owner evidence gaps.
 
 Metrics retain their actual denominators and dates. ToneScope's authored deterministic development experiments do not establish live-model quality. Dispatcher uses seeded data, deterministic ranking and simulated booking; its separate Gemini copilot has limited parsing/field checks. HCG's historical recommendation latency remains above its target. No company impact, adoption, senior ownership or new model-quality result was invented.
@@ -17,7 +19,7 @@ Metrics retain their actual denominators and dates. ToneScope's authored determi
 - Keyboard: 25 reachable homepage controls with visible focus, skip link and native anchor/history behavior. Passive navigation now includes Experience. Reduced-motion behavior and no-JavaScript navigation remain checked.
 - Hiring-specific interactions: Experience heading fits the first 390×844 mobile screen; key technical labels are at least 14px; Skills has no project links. Native walkthrough details open; actual ToneScope capture links work. Dispatcher calculation covers source example, changed input, invalid/missing/range/precision errors, identified fields, reset and Enter submission. Without JavaScript the source formula remains readable and the calculator stays hidden.
 - Accessibility: 12 axe scans (five public pages and 404 at 390/1440), zero violations under the configured WCAG tags. Sampled rendered text contrast is recorded in browser-results.json. Automated checks do not establish WCAG conformance; human screen-reader testing remains outstanding.
-- PDF: two pages, 46 expected source text items and seven canonical/contact annotations. Selectable text and no local URLs. HTML/PDF share current source data.
+- PDF: two pages, 47 expected source text items and seven canonical/contact annotations after the owner's University College bullet updates. Selectable text and no local URLs. HTML/PDF share current source data.
 
 ## Independent reviews and iteration
 
@@ -37,6 +39,6 @@ Isolated committed export `536c182` passed locked dependency installation, lint/
 
 ## Release boundary and limitations
 
-This is a local/PR change. The owner will review and merge; no merge, deployment or DNS action is authorized here. Git-triggered deployment remains disabled. Existing production-host checks from the earlier release do not verify these changed pages.
+The owner explicitly authorized PR review, merge, deployment and live verification for the latest résumé update. Git-triggered deployment remains disabled; release the exact merged commit through the existing Vercel project. No DNS change is needed or requested. Earlier live checks do not verify this update; its own live results must be recorded after release.
 
 After an authorized release, verify actual HTTPS/host redirects, statuses/headers, crawler access, assets/PDF and social previews. Search Console/Bing, field performance, email delivery and human screen-reader review remain owner or release follow-up tasks. Indexing and hiring outcomes are not guaranteed. Skills and experience follow supplied résumé text, with the ASU end date corrected to May 2026 by the owner on October 20. Employer outcomes still require supporting evidence.

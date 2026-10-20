@@ -8,8 +8,6 @@ export const person = {
   github: 'https://github.com/siddsan7',
   linkedin: 'https://www.linkedin.com/in/siddharth-sanjay/',
   portrait: '/assets/profile/siddharth-linkedin.webp',
-  resumeSource:
-    'https://drive.google.com/file/d/1b-1fFbyEB5KZibWbzwQiYJZNb8ajk_le/view?usp=drive_link',
   premise: 'RAG pipelines and grounded AI applications.',
   summary:
     'I build with Python, FastAPI, and React. At SkipCourse, I worked on RAG assessment workflows and asynchronous Google Cloud services.',

@@ -2,9 +2,11 @@
 
 Updated: 2026-10-20.
 
+Current task: owner explicitly authorizes PR, review, merge, production deploy and live verification of the pending résumé copy changes on `codex/portfolio-mentoring-update`. University College lead-role bullets use the latest exact owner text: led webpage creation/redesign/maintenance serving5,000+users; mentored interns in Drupal/web development (no intern count); outreach/stakeholder collaboration for1000+students. These numbers are owner supplied. Preserve May2026 end dates. Removed explanatory résumé footer and original Drive-source link, including unused `person.resumeSource`. Homepage/HTML résumé/PDF share the changes; refreshed PDF/captures. Prior local lint/build/218static/fullbrowser/PDF checks passed;47facts/seven links/two pages. Fresh release gates and independent review precede merge/deployment. Keep all18 unrelated legacy files unchanged and excluded from commits.
+
 ## Active objective and boundary
 
-Implement the hiring review, independently review with hiring/frontend/evidence agents, resolve findings, and push a structured PR. The owner will review and merge. Do not merge, deploy or change DNS. Branch: `codex/portfolio-hiring-refresh`, based on current origin/main `81889fee884446481897af30da98cdab06238093`.
+Hiring refresh complete. Owner authorized review/merge, then production deployment and live verification. PR#4 squash-merged into main as `a185b7c0a16b7c945624e372ad7e3594fca1fea2`; exact merged commit deployed through the existing Vercel Git connection as `dpl_4FHoWMprv9bxAPD3ZZcACmHhZ1yW` (READY). Primary domain: https://siddharthsanjay.com. No DNS/protection settings changed. Local branch remains `codex/portfolio-hiring-refresh`; unrelated dirty files are preserved.
 
 ## Owner preferences
 
@@ -38,4 +40,4 @@ Owner confirmed May 2026 as the ASU role end date on October 20; homepage and r�
 
 ## Next action
 
-Owner review of open PR#4: https://github.com/siddsan7/Portfolio/pull/4. It is attached to the chat, mergeable/clean, with no hosted checks reported. Final cold mobile LCP1657/2259/1656ms passes; isolated committed export536c182 passes locked install/lint/build/218static/preview/PDF/fullbrowser. Capture provenance pinned at5d259cf (HTTP200); raw snapshots saved to ignored output/tonescope-native-audit before capture-worktree archive. All three reviewers accepted fixes. Existing lockfile audit18findings/13high is documented; packages unchanged. Scope complete; owner reviews/merges. No merge/deploy performed or authorized here.
+PR#4 merged and deployed under explicit owner authorization. Public live verification passed five routes,25 responsive cases, all five routes200%text/320px, keyboard/history/reduced-motion/no-JS, walkthrough/calculator error/reset flows,12 axe scans with zero violations,16 exact asset hashes (including current PDF),15redirects,2real404s,6noindex archives,robots/sitemap/metadata and corrected May2026dates. No page errors. Vercel READY/aliasError:null. All18 legacy hashes unchanged. Local ignored evidence and scope: `.build/live-evidence/report.md` and accompanying JSON/screenshots. Dependency findings remain documented; packages unchanged. Human screen-reader and field performance remain follow-up. Next action requires a new owner request. Git-triggered deployment stays disabled.
