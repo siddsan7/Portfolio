@@ -35,6 +35,44 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
+/* Dark theme: true black, warm white type, and one ember accent that is the
+   light theme's copper turned up. Everything else stays neutral. */
+[data-theme='dark'] {
+  --paper: #050505;
+  --ink: #f3f0ea;
+  --muted: #a09ca6;
+  --copper: #ff6a3d;
+  --lilac: #0c0c0e;
+  --sage: #0c0c0e;
+  --surface: #0c0c0e;
+  --rule: #232327;
+  --wave: #6b6873;
+  color-scheme: dark;
+}
+[data-theme='dark'] ::selection {
+  background: var(--copper);
+  color: #050505;
+}
+[data-theme='dark'] .primary:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: #050505;
+}
+[data-theme='dark'] .project-panel:hover,
+[data-theme='dark'] .project-panel:focus-within {
+  border-color: #4a4a52;
+}
+[data-theme='dark'] .resonance .wave {
+  stroke-opacity: 0.8;
+}
+[data-theme='dark'] .resonance .wave.faint {
+  stroke-opacity: 0.45;
+}
+[data-theme='dark'] .portrait,
+[data-theme='dark'] .product-screenshot,
+[data-theme='dark'] .walkthrough-capture img {
+  border-color: var(--rule);
+}
 * {
   box-sizing: border-box;
 }
@@ -229,6 +267,66 @@ section[id],
 .resume-nav {
   font-size: 16px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.theme-toggle[hidden] {
+  display: none;
+}
+.theme-toggle svg {
+  width: 20px;
+  overflow: visible;
+  transition: transform 500ms var(--ease-out);
+}
+.theme-toggle:hover svg {
+  transform: rotate(30deg);
+}
+.theme-toggle:active svg {
+  transform: scale(0.88);
+}
+/* Sun-to-moon morph: the rays retract while a cut-out slides across the disc. */
+.sun-core {
+  fill: currentColor;
+  transform-origin: 12px 12px;
+  transition: transform 500ms var(--ease-out);
+}
+.sun-rays {
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  transform-origin: 12px 12px;
+  transition:
+    transform 500ms var(--ease-out),
+    opacity 300ms;
+}
+.moon-cut {
+  transition: transform 500ms var(--ease-out);
+}
+[data-theme='dark'] .sun-core {
+  transform: scale(1.6);
+}
+[data-theme='dark'] .sun-rays {
+  opacity: 0;
+  transform: rotate(-60deg) scale(0.4);
+}
+[data-theme='dark'] .moon-cut {
+  transform: translate(-10px, 5px);
+}
 .arrow-link {
   display: inline-flex;
   align-items: center;
@@ -242,13 +340,29 @@ section[id],
 .arrow-link:focus-visible {
   text-decoration-color: var(--copper);
 }
-.arrow-link span {
+/* Slide-through arrow: the glyph leaves on its own heading while a copy,
+   drawn as its shadow, arrives from the opposite corner. */
+.arrow {
   display: inline-block;
-  transition: transform 260ms var(--ease-out);
+  overflow: hidden;
+  line-height: 1.2;
+  vertical-align: bottom;
 }
-.arrow-link:hover span,
-.arrow-link:focus-visible span {
-  transform: translate(3px, -3px);
+.arrow > span {
+  display: block;
+  text-shadow: -1.25em 1.25em 0 currentColor;
+  transition: transform 420ms var(--ease-out);
+}
+.arrow.down > span {
+  text-shadow: 0 -1.25em 0 currentColor;
+}
+a:hover .arrow > span,
+a:focus-visible .arrow > span {
+  transform: translate(1.25em, -1.25em);
+}
+a:hover .arrow.down > span,
+a:focus-visible .arrow.down > span {
+  transform: translateY(1.25em);
 }
 .skip-link {
   position: fixed;
@@ -338,19 +452,9 @@ section[id],
     color 200ms,
     transform 160ms var(--ease-out);
 }
-.primary span {
-  display: inline-block;
-  transition: transform 260ms var(--ease-out);
-}
 .primary:hover {
   background: var(--paper);
   color: var(--ink);
-}
-.primary:hover span {
-  transform: translate(3px, -3px);
-}
-.primary[href^='#']:hover span {
-  transform: translateY(3px);
 }
 .primary:active {
   transform: scale(0.98);
@@ -505,6 +609,13 @@ section[id],
   .project-panel:hover .project-visual img {
     transform: scale(1.02);
   }
+}
+.project-visual .theme-dark,
+[data-theme='dark'] .project-visual .theme-light {
+  display: none;
+}
+[data-theme='dark'] .project-visual .theme-dark {
+  display: block;
 }
 .project-visual figcaption {
   font-family: var(--mono);
@@ -1281,9 +1392,12 @@ section[id],
   .wordmark {
     font-size: 18px;
   }
-  .resume-nav {
+  .header-actions {
     grid-column: 2;
     grid-row: 1;
+    gap: 8px;
+  }
+  .resume-nav {
     font-size: 14px;
   }
   .site-header nav {
@@ -1522,6 +1636,17 @@ section[id],
   .site-header {
     view-transition-name: site-header;
   }
+  /* Theme switch: one snapshot of the whole page, the new theme growing as a
+     circle from the toggle. */
+  .theme-switch .site-header {
+    view-transition-name: none;
+  }
+  .theme-switch::view-transition-old(root) {
+    animation: none;
+  }
+  .theme-switch::view-transition-new(root) {
+    animation: theme-reveal 750ms var(--ease-in-out) both;
+  }
   .hero h1 .line > span {
     animation: line-up 1000ms var(--ease-out) both;
   }
@@ -1564,6 +1689,14 @@ section[id],
     transition: none;
   }
 }
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--x) var(--y));
+  }
+  to {
+    clip-path: circle(150vmax at var(--x) var(--y));
+  }
+}
 @keyframes line-up {
   from {
     transform: translateY(110%);
@@ -1599,15 +1732,22 @@ section[id],
     animation: none !important;
     transition: none !important;
   }
-  .arrow-link:hover span,
-  .arrow-link:focus-visible span,
-  .primary:hover span,
+  a:hover .arrow > span,
+  a:focus-visible .arrow > span,
   .primary:active,
   .project-panel:hover .project-visual img {
     transform: none;
   }
 }
 @media print {
+  :root {
+    --paper: #fff;
+    --ink: #202020;
+    --muted: #444;
+    --copper: #202020;
+    --rule: #bbb;
+    --surface: #f4f4f4;
+  }
   .reveal-pending {
     opacity: 1;
     transform: none;

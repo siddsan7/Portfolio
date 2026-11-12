@@ -18,9 +18,33 @@ export default function Navigation({ home = false }) {
         ))}
         <span className="nav-indicator" aria-hidden="true" />
       </nav>
-      <a className="resume-nav arrow-link" href={resumeUrl}>
-        Résumé <span aria-hidden="true">↗</span>
-      </a>
+      <div className="header-actions">
+        <a className="resume-nav arrow-link" href={resumeUrl}>
+          Résumé{' '}
+          <span className="arrow" aria-hidden="true">
+            <span>↗</span>
+          </span>
+        </a>
+        {/* Hidden until the script that makes it work has loaded. */}
+        <button
+          className="theme-toggle"
+          type="button"
+          aria-label="Dark theme"
+          aria-pressed="false"
+          hidden
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <mask id="theme-moon">
+              <rect width="24" height="24" fill="#fff" />
+              <circle className="moon-cut" cx="27" cy="3" r="7" fill="#000" />
+            </mask>
+            <circle className="sun-core" cx="12" cy="12" r="5" mask="url(#theme-moon)" />
+            <g className="sun-rays">
+              <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" />
+            </g>
+          </svg>
+        </button>
+      </div>
     </div>
   )
 }
