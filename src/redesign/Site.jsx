@@ -79,7 +79,10 @@ function Home() {
           <p className="hero-summary">{person.summary}</p>
           <div className="hero-actions">
             <a className="primary" href="#work">
-              View work <span aria-hidden="true">↓</span>
+              View work{' '}
+              <span className="arrow down" aria-hidden="true">
+                <span>↓</span>
+              </span>
             </a>
             <ArrowLink href={person.resume}>Résumé</ArrowLink>
           </div>
@@ -189,7 +192,10 @@ function Resume() {
         <p>{person.summary}</p>
         <div className="resume-actions">
           <a className="primary" href={person.resume}>
-            View résumé <span aria-hidden="true">↗</span>
+            View résumé{' '}
+            <span className="arrow" aria-hidden="true">
+              <span>↗</span>
+            </span>
           </a>
           <ArrowLink href={`mailto:${person.email}`}>{person.email}</ArrowLink>
         </div>

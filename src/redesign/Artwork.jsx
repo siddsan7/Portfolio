@@ -79,14 +79,23 @@ export function Resonance() {
 export function ProjectVisual({ project }) {
   return (
     <figure className={`project-visual ${project.kind}`}>
-      <img
-        src={project.image}
-        alt={project.imageAlt}
-        width={project.imageWidth}
-        height={project.imageHeight}
-        loading="lazy"
-        decoding="async"
-      />
+      {/* One image per theme; the hidden one is lazy, so it is never fetched. */}
+      {['light', 'dark'].map((theme) => (
+        <img
+          key={theme}
+          className={`theme-${theme}`}
+          src={
+            theme === 'dark'
+              ? project.image.replace('-crisp.svg', '-dark.svg')
+              : project.image
+          }
+          alt={project.imageAlt}
+          width={project.imageWidth}
+          height={project.imageHeight}
+          loading="lazy"
+          decoding="async"
+        />
+      ))}
       <figcaption>
         Concept illustration
         {project.kind === 'logistics' ? ' · Demo workflow' : ''}

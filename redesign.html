@@ -11,6 +11,13 @@
       type="font/woff2"
       crossorigin
     />
+    <meta name="theme-color" content="#f6f2ec" />
+    <script>
+      try {
+        if (localStorage.theme === 'dark')
+          document.documentElement.dataset.theme = 'dark'
+      } catch {}
+    </script>
     <script type="speculationrules">
       { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
     </script>

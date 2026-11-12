@@ -108,4 +108,36 @@ if (!calm) {
   }
 }
 
+// Theme switch. The new theme is revealed as a circle growing from the button
+// (View Transitions); browsers without it, and reduced motion, switch at once.
+const toggle = header.querySelector('.theme-toggle')
+const themeColor = document.querySelector('meta[name="theme-color"]')
+const sync = () => {
+  const dark = root.dataset.theme === 'dark'
+  toggle.setAttribute('aria-pressed', dark)
+  themeColor.content = dark ? '#050505' : '#f6f2ec'
+}
+toggle.hidden = false
+sync()
+toggle.addEventListener('click', () => {
+  const flip = () => {
+    const dark = root.dataset.theme !== 'dark'
+    root.dataset.theme = dark ? 'dark' : 'light'
+    try {
+      localStorage.theme = root.dataset.theme
+    } catch {
+      // Private mode: the choice simply lasts for this page.
+    }
+    sync()
+  }
+  if (calm || !document.startViewTransition) return flip()
+  const box = toggle.getBoundingClientRect()
+  root.style.setProperty('--x', `${box.left + box.width / 2}px`)
+  root.style.setProperty('--y', `${box.top + box.height / 2}px`)
+  root.classList.add('theme-switch')
+  document
+    .startViewTransition(flip)
+    .finished.finally(() => root.classList.remove('theme-switch'))
+})
+
 enhanceCalculators()

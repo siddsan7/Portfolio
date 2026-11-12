@@ -76,7 +76,7 @@ export default function CaseStudy({ project, nextProject }) {
                 (<a href={project.screenshot.credit.license}>CC BY 4.0</a>), visualized with compression.</p>
             )}
           </div>
-          <a href={project.screenshot.src}>View full size <span aria-hidden="true">↗</span></a>
+          <a href={project.screenshot.src}>View full size <span className="arrow" aria-hidden="true"><span>↗</span></span></a>
         </figcaption>
       </figure>
       <div className="reading-column">
