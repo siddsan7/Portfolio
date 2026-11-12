@@ -66,9 +66,12 @@ function Home() {
       <section className="hero" aria-labelledby="identity">
         <div className="hero-copy">
           <h1 id="identity">
-            Siddharth
-            <br />
-            Sanjay
+            <span className="line">
+              <span>Siddharth</span>
+            </span>{' '}
+            <span className="line">
+              <span>Sanjay</span>
+            </span>
           </h1>
           <p className="role">{person.role}</p>
           <p className="hero-credential">ASU Computer Science graduate</p>

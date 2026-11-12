@@ -27,11 +27,11 @@ export const projects = [
     name: 'Harmonic Color Graph',
     category: 'AI engineering / Recommendations',
     kind: 'harmony',
-    image: '/assets/artwork/harmonic-color-graph.webp',
+    image: '/assets/artwork/harmonic-color-graph-crisp.svg',
     imageAlt:
       'Concept illustration of chord relationships, with connected C, Am, Fmaj7, G, Dm, and Em nodes and a copper-colored path.',
-    imageWidth: 623,
-    imageHeight: 377,
+    imageWidth: 960,
+    imageHeight: 576,
     screenshot: {
       src: '/assets/screenshots/harmonic-color-graph.webp',
       width: 1600,
