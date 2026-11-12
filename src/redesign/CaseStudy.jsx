@@ -148,10 +148,10 @@ export default function CaseStudy({ project, nextProject }) {
           <p>Implementation and documentation pinned to the reviewed source revision.</p>
           <ul>{project.sources.map(source => <li key={source[1]}><SourceLink project={project} source={source} /></li>)}</ul>
         </section>
-        <aside className="next-project">
+        <div className="next-project">
           <p className="eyebrow">Continue exploring</p>
           <ArrowLink href={`/projects/${nextProject.slug}/`}>{nextProject.name}</ArrowLink>
-        </aside>
+        </div>
       </div>
     </article>
   )
