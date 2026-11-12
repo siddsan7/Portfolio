@@ -61,24 +61,16 @@ try {
     await page.evaluate(() => document.fonts.check('18px Karrik')),
     'Karrik loaded',
   )
-  await page.waitForFunction(() =>
-    performance
+  // The enhancement is one small module; no framework bundle is downloaded.
+  result.enhancement = await page.evaluate(() => ({
+    scripts: performance
       .getEntriesByType('resource')
-      .some((entry) => /\/assets\/client-.*\.js$/.test(entry.name)),
-  )
-  result.enhancement = await page.evaluate(() => {
-    const navigation = performance.getEntriesByType('navigation')[0]
-    const client = performance
-      .getEntriesByType('resource')
-      .find((entry) => /\/assets\/client-.*\.js$/.test(entry.name))
-    return {
-      loadEventStart: navigation.loadEventStart,
-      clientRequestStart: client.startTime,
-    }
-  })
+      .filter((entry) => /\.js$/.test(entry.name))
+      .map((entry) => entry.name),
+  }))
   assert(
-    result.enhancement.clientRequestStart >= result.enhancement.loadEventStart,
-    'navigation download starts after eager resources finish',
+    result.enhancement.scripts.length === 1,
+    'a single enhancement script is requested',
   )
   result.contrast = await page.evaluate(() => {
     const luminance = (color) => {
