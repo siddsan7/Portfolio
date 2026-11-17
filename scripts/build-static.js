@@ -44,7 +44,7 @@ for (const path of [
       : project
         ? project.summary
         : path === '/resume/'
-          ? 'Education, software engineering experience, and featured projects from Siddharth Sanjay. Read the HTML résumé or download the PDF.'
+          ? 'Education, software engineering experience, and featured projects from Siddharth Sanjay. Read the résumé online or open the full document.'
           : archived
             ? `An archived portfolio entry for ${archived.title}. Earlier notes are preserved for reference and have not been reverified for the current portfolio.`
             : 'This page could not be found. Return to Siddharth Sanjay’s portfolio.'

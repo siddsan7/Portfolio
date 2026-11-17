@@ -14,9 +14,14 @@
     <meta name="theme-color" content="#f6f2ec" />
     <script>
       try {
-        if (localStorage.theme === 'dark')
-          document.documentElement.dataset.theme = 'dark'
+        var saved = localStorage.theme
       } catch {}
+      // A saved choice wins; otherwise follow the system setting.
+      if (
+        saved === 'dark' ||
+        (!saved && matchMedia('(prefers-color-scheme: dark)').matches)
+      )
+        document.documentElement.dataset.theme = 'dark'
     </script>
     <script type="speculationrules">
       { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
