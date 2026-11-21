@@ -118,7 +118,8 @@ function Home() {
           title="Featured projects"
         >
           AI engineering through grounded recommendations, controlled assistant
-          actions, and explainable decision support.
+          actions, explainable decision support, and a controlled research
+          study.
         </SectionHeading>
         <div className="project-list">
           {projects.map((p, i) => (
@@ -236,7 +237,7 @@ function Resume() {
       </section>
       <section>
         <h2>Featured projects</h2>
-        {projects.map((p) => (
+        {projects.filter(p => p.includeOnResume !== false).map((p) => (
           <div className="resume-project" key={p.slug}>
             <h3>
               <a href={`/projects/${p.slug}/`}>{p.name}</a>

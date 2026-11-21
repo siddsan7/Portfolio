@@ -136,4 +136,66 @@ export const caseStudies = {
       calculator: true,
     },
   },
+  'platonic-goal-transfer': {
+    title: 'Platonic Goal Transfer | Controlled study of corrupted text pairs',
+    revision: 'c0abcc3436057b61b0f0c431986092eff9bcf7d3',
+    status: 'Completed toy-scale study · AI-agent implementation',
+    role: 'Research question, prediction and decision threshold · AI agents planned, built, reviewed and ran the study',
+    focus: 'Controlled ablations, held-out evaluation, pre-registered prediction',
+    result: 'With one text dimension, the robot scored 50% with shape errors and 100% with floor-pattern errors. With two dimensions, both scored 100%.',
+    methods: 'Python · NumPy · Representation learning · Paired evaluation',
+    evidenceIntro: 'Held-out results from a simulated 7×7 grid world with a fixed caption vocabulary. “Success” means the frozen planner reached the pad the text goal described. The gap in percentage points (pp) is the success rate with floor-pattern errors (trim_swap) minus the rate with target-shape errors (goal_swap). Text width counts how many directions the encoder can keep.',
+    evidence: [
+      ['Original study · text width 2 (main condition)', 'goal_swap 100% · trim_swap 100% · +0.00 pp', 'Five seeds, 20,480 held-out text episodes per arm; 95% cluster-bootstrap CI [+0.00, +0.00]. The study’s protocol predicted this tie from the construction.'],
+      ['Original study · text width 1 (capacity stress test)', 'goal_swap 50% · trim_swap 100% · +50.00 pp', 'Locked before held-out evaluation; +50.0 pp in every seed. The clean arm also scores 50% because its two leading directions tie and the kept one carries trim.'],
+      ['Original controls', 'Oracle, image goal, keyword 100% · goal-blind 50%', 'Goal-blind is 50% by construction. Timeouts are 0 in every condition, and all health gates passed.'],
+      ['Follow-up · withheld glyph–trim combinations', '+0.00 pp in all 12 cells', '4 glyphs × 4 trims, 48 fresh held-out topologies, 1,536 episodes per cell; 95% CI [0.00, 0.00]. Every learned arm scored 18,432/18,432.'],
+      ['Follow-up baselines', 'Raw word counts 4,608/4,608 · keyword 4,608/4,608', 'Simple baselines also reached the ceiling, so this test cannot separate learned text encoders from lookup.'],
+      ['Follow-up ceiling', 'All text methods at 100%. Goal-blind control at 50%.', 'Perfect scores leave no room to measure a difference in success. The follow-up changed the world, text model and training data together.'],
+    ],
+    evidenceSource: ['Original study: results and conditions', 'docs/case-study.md'],
+    extraEvidenceSource: ['Follow-up: prediction tested on withheld combinations', 'docs/followup-results.md'],
+    decision: {
+      choiceLabel: 'Study design choice',
+      constraint: 'A training-only eigenvalue check showed that 25% swaps halve the swapped factor’s direction (0.977199 → 0.488599) without removing it, so with two text directions both factors survive and the arms were expected to tie.',
+      alternative: 'Run only the main width-2 condition, where the construction already predicted equal arms.',
+      choice: 'Also lock width 1 as a one-direction capacity stress test. Both widths were frozen, piloted on validation and only then run on the held-out test split.',
+      consequence: 'An expected tie became a mechanistic test: at width 1 the encoder keeps only the stronger direction, producing the +50 pp contrast. The run logs show this rank-one effect in the text encoder directly.',
+      source: ['Locked study protocol', 'docs/protocol.md'],
+    },
+    flows: [
+      {
+        label: 'One text arm, from caption pairs to an executed goal',
+        steps: ['Caption-to-caption pairs (25% rewired in swap arms)', 'Text encoder (CCA)', 'Orthogonal calibration on 128 clean anchors', 'Goal vector', 'Frozen image-only planner', 'Held-out success'],
+        boundary: 'Every arm shares the vision model, planner, caption multisets, swap indices and calibration anchors; only the corrupted factor differs. Eight training captions make the text side a finite lookup.',
+      },
+    ],
+    walkthrough: {
+      intro: 'Follow the first held-out width-1 episode where the two corrupted-pair arms disagree: seed 11, test layout 0, striped floor, goal circle, caption “head for the circle tile where the floor is striped”.',
+      steps: [
+        ['trim_swap reaches the circle', 'trim_swap keeps the glyph direction, so the circle and triangle captions map to separate goal vectors. The planner steps right twice and enters the circle pad: success in 2 steps.'],
+        ['goal_swap enters the wrong pad', 'goal_swap keeps only the trim direction, so its glyph separation is 0.0 and both glyph captions map to one point. The planner goes up twice, right once and up again into the triangle pad: wrong pad in 4 steps.'],
+        ['Compare with the references', 'The image goal on the same layout takes the 2-step circle route, matching trim_swap. The clean arm at width 1 takes the same 4-step path as goal_swap because its retained direction, a numerical tie-break, kept trim; the study reports that arm and leaves it uninterpreted.'],
+      ],
+      images: [
+        { src: '/assets/research/pgt-replay.png', width: 1050, height: 585, alt: 'Two replays of seed 11, test layout 0, at text width 1. The trim_swap path steps right twice into the circle pad, a success. The goal_swap path goes up twice, right once and up again into the triangle pad, a wrong pad.', caption: 'Replay figure from the repository. The evidence check re-executes every logged step of these episodes in the simulator.' },
+      ],
+      source: ['Replayed episode records', 'docs/evidence/replay.json'],
+    },
+    prediction: {
+      intro: 'Siddharth committed this prediction before training began.',
+      quotes: [
+        '1) since the measurement is based on the target shape, I think the training pair which disagrees about the floor pattern should function better more often.',
+        "2) I don't expect a simple word-count baseline to function as well, since it doesn't train on the shape-floor combinations but rather just the linear words additively.",
+        '3) If the 2 models tie within a close range of percentage points (maybe within 5 points), or if the target-shape-disagree model actually beats out the floor-pattern-disagree model, that would definitely change my mind',
+      ],
+      outcome: 'Points 1 and 2 were not supported: trim_swap and goal_swap tied at 0 pp, and raw word counts scored 4,608/4,608. The tie condition in point 3, within about 5 points, was met.',
+      source: ['Exact committed prediction', 'docs/followup-prediction.json'],
+    },
+    planned: {
+      heading: 'Next experiment',
+      text: 'Can a model learn an invented name for a shape from text alone? The published protocol compares consistent word pairings with scrambled pairings and an untrained model. It measures how closely each instruction points to the intended pad, even when two models take the same route. The experiment is awaiting its first run.',
+      source: ['Alias-transfer protocol', 'docs/alias-protocol.md'],
+    },
+  },
 }

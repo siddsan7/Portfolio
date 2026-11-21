@@ -19,7 +19,7 @@ try {
       `preview noindex: ${route}`,
     )
   }
-  console.log('Preview indexing checks passed for all 5 public routes.')
+  console.log(`Preview indexing checks passed for all ${routes.length} public routes.`)
 } finally {
   // Always leave a production build for subsequent tests and review.
   build('production')

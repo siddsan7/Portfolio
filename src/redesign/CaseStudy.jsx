@@ -51,7 +51,7 @@ export default function CaseStudy({ project, nextProject }) {
         <p className="case-premise">{project.premise}</p>
         <p className="case-summary">{project.summary}</p>
         <dl className="case-facts">
-          <div><dt>My role</dt><dd>Individual project · design and implementation</dd></div>
+          <div><dt>My role</dt><dd>{detail.role || 'Individual project · design and implementation'}</dd></div>
           <div><dt>Engineering focus</dt><dd>{detail.focus}</dd></div>
           <div><dt>Evidence snapshot</dt><dd>{detail.result}</dd></div>
           <div><dt>Status</dt><dd>{project.status}</dd></div>
@@ -81,7 +81,7 @@ export default function CaseStudy({ project, nextProject }) {
       </figure>
       <div className="reading-column">
         <section><h2>The problem</h2><p>{project.problem}</p></section>
-        <section><h2>My contribution</h2><p>{project.contribution}</p></section>
+        <section><h2>{detail.role ? 'Who did what' : 'My contribution'}</h2><p>{project.contribution}</p></section>
         <section id="evidence">
           <h2>Evidence at a glance</h2>
           <p>{detail.evidenceIntro}</p>
@@ -113,7 +113,7 @@ export default function CaseStudy({ project, nextProject }) {
           <dl className="decision-story">
             <div><dt>Constraint</dt><dd>{detail.decision.constraint}</dd></div>
             <div><dt>Alternative</dt><dd>{detail.decision.alternative}</dd></div>
-            <div><dt>My choice</dt><dd>{detail.decision.choice}</dd></div>
+            <div><dt>{detail.decision.choiceLabel || 'My choice'}</dt><dd>{detail.decision.choice}</dd></div>
             <div><dt>Consequence</dt><dd>{detail.decision.consequence}</dd></div>
           </dl>
           <SourceLink project={project} source={detail.decision.source} />
@@ -129,7 +129,7 @@ export default function CaseStudy({ project, nextProject }) {
                   {detail.walkthrough.images?.[index] && (
                     <figure className="walkthrough-capture">
                       <a href={detail.walkthrough.images[index].src} aria-label={`View full-size ${title} capture`}>
-                        <img src={detail.walkthrough.images[index].src} alt={detail.walkthrough.images[index].alt} width="3200" height="2200" loading="lazy" decoding="async" />
+                        <img src={detail.walkthrough.images[index].src} alt={detail.walkthrough.images[index].alt} width={detail.walkthrough.images[index].width || 3200} height={detail.walkthrough.images[index].height || 2200} loading="lazy" decoding="async" />
                       </a>
                       <figcaption>{detail.walkthrough.images[index].caption}</figcaption>
                     </figure>
@@ -142,7 +142,25 @@ export default function CaseStudy({ project, nextProject }) {
           <SourceLink project={project} source={detail.walkthrough.source} />
           {detail.walkthrough.captureSource && <ArrowLink href={detail.walkthrough.captureSource}>Capture conditions and observations</ArrowLink>}
         </section>
+        {detail.prediction && (
+          <section id="prediction">
+            <h2>The prediction, tested</h2>
+            <p>{detail.prediction.intro}</p>
+            <blockquote className="prediction-quote">
+              {detail.prediction.quotes.map(quote => <p key={quote}>{quote}</p>)}
+            </blockquote>
+            <p>{detail.prediction.outcome}</p>
+            <SourceLink project={project} source={detail.prediction.source} />
+          </section>
+        )}
         <section><h2>Current scope</h2><p>{scope}</p></section>
+        {detail.planned && (
+          <section id="next-study">
+            <h2>{detail.planned.heading}</h2>
+            <p>{detail.planned.text}</p>
+            <SourceLink project={project} source={detail.planned.source} />
+          </section>
+        )}
         <section className="sources">
           <h2>Source evidence</h2>
           <p>Implementation and documentation pinned to the reviewed source revision.</p>

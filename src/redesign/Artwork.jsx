@@ -97,8 +97,12 @@ export function ProjectVisual({ project }) {
         />
       ))}
       <figcaption>
-        Concept illustration
-        {project.kind === 'logistics' ? ' · Demo workflow' : ''}
+        {project.imageCaption || (
+          <>
+            Concept illustration
+            {project.kind === 'logistics' ? ' · Demo workflow' : ''}
+          </>
+        )}
       </figcaption>
     </figure>
   )

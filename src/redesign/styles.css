@@ -597,6 +597,15 @@ a:focus-visible .arrow.down > span {
 .project-visual.logistics {
   background: var(--sage);
 }
+.project-visual.research {
+  background: #fff;
+}
+.prediction-quote {
+  margin: 20px 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--copper);
+  font-style: italic;
+}
 .project-visual img {
   flex: none;
   width: 100%;

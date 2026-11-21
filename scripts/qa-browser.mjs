@@ -382,7 +382,7 @@ try {
   )
   }
   result.textZoom =
-    'All 5 public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region'
+    `All ${routes.length} public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region`
 
   const noJS = await browser.newContext({
     javaScriptEnabled: false,
@@ -409,7 +409,7 @@ try {
     'no-JS project navigation',
   )
   result.noJavaScript =
-    'All 5 routes, work anchor, and project navigation passed'
+    `All ${routes.length} routes, work anchor, and project navigation passed`
   await noJS.close()
 
   if (process.env.PORTFOLIO_AXE_PATH) {
