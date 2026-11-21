@@ -65,7 +65,7 @@ export default function CaseStudy({ project, nextProject }) {
         </div>
       </header>
       <figure className="product-screenshot">
-        <a href={project.screenshot.src} aria-label={`View full-size ${project.name} screenshot`}>
+        <a data-full-image href={project.screenshot.src} aria-label={`View full-size ${project.name} screenshot`}>
           <img src={project.screenshot.src} alt={project.screenshot.alt} width={project.screenshot.width} height={project.screenshot.height} loading="lazy" decoding="async" />
         </a>
         <figcaption>
@@ -76,7 +76,7 @@ export default function CaseStudy({ project, nextProject }) {
                 (<a href={project.screenshot.credit.license}>CC BY 4.0</a>), visualized with compression.</p>
             )}
           </div>
-          <a href={project.screenshot.src}>View full size <span className="arrow" aria-hidden="true"><span>↗</span></span></a>
+          <a data-full-image href={project.screenshot.src}>View full size <span className="arrow" aria-hidden="true"><span>↗</span></span></a>
         </figcaption>
       </figure>
       <div className="reading-column">
@@ -128,7 +128,7 @@ export default function CaseStudy({ project, nextProject }) {
                   <p>{text}</p>
                   {detail.walkthrough.images?.[index] && (
                     <figure className="walkthrough-capture">
-                      <a href={detail.walkthrough.images[index].src} aria-label={`View full-size ${title} capture`}>
+                      <a data-full-image href={detail.walkthrough.images[index].src} aria-label={`View full-size ${title} capture`}>
                         <img src={detail.walkthrough.images[index].src} alt={detail.walkthrough.images[index].alt} width={detail.walkthrough.images[index].width || 3200} height={detail.walkthrough.images[index].height || 2200} loading="lazy" decoding="async" />
                       </a>
                       <figcaption>{detail.walkthrough.images[index].caption}</figcaption>
