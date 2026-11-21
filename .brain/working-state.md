@@ -1,5 +1,10 @@
 # Working state
 
+## Research case study
+
+The fourth homepage project links to `/projects/platonic-goal-transfer/`. The research repository holds the experiment, evidence and original prediction. The portfolio quotes the prediction and pins its sources. Keep the résumé selection separate from the homepage. For an empirical update, verify the research commit and denominators before updating the case study.
+
+
 Updated: 2026-10-20.
 
 Current task: owner explicitly authorizes PR, review, merge, production deploy and live verification of the pending résumé copy changes on `codex/portfolio-mentoring-update`. University College lead-role bullets use the latest exact owner text: led webpage creation/redesign/maintenance serving5,000+users; mentored interns in Drupal/web development (no intern count); outreach/stakeholder collaboration for1000+students. These numbers are owner supplied. Preserve May2026 end dates. Removed explanatory résumé footer and original Drive-source link, including unused `person.resumeSource`. Homepage/HTML résumé/PDF share the changes; refreshed PDF/captures. Prior local lint/build/218static/fullbrowser/PDF checks passed;47facts/seven links/two pages. Fresh release gates and independent review precede merge/deployment. Keep all18 unrelated legacy files unchanged and excluded from commits.

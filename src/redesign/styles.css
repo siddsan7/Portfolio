@@ -633,6 +633,11 @@ a:focus-visible .arrow.down > span {
   padding: 8px 16px 12px;
   color: var(--muted);
 }
+/* The research plate is white in both themes, so its caption keeps a dark
+   ink (about 6.3:1 on white) instead of the theme's muted grey. */
+.project-visual.research figcaption {
+  color: #675f6d;
+}
 .panel-actions {
   display: flex;
   flex-wrap: wrap;

@@ -183,7 +183,7 @@ export const caseStudies = {
       source: ['Replayed episode records', 'docs/evidence/replay.json'],
     },
     prediction: {
-      intro: 'Siddharth committed this prediction before training began.',
+      intro: 'Siddharth wrote this prediction. Codex committed it to the repository before training began.',
       quotes: [
         '1) since the measurement is based on the target shape, I think the training pair which disagrees about the floor pattern should function better more often.',
         "2) I don't expect a simple word-count baseline to function as well, since it doesn't train on the shape-floor combinations but rather just the linear words additively.",
