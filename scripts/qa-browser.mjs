@@ -427,6 +427,17 @@ try {
       await page.setViewportSize({ width, height: 900 })
       for (const route of [...routes, '/missing/']) {
         await page.goto(base + route)
+        // Read each section before measuring foreground contrast. Offscreen sections
+        // animate into view when the reader reaches them.
+        const sections = page.locator('.reveal')
+        for (const section of await sections.all()) {
+          await section.evaluate(el => el.scrollIntoView({ block: 'center', behavior: 'instant' }))
+          await page.waitForFunction(el => !el.classList.contains('reveal-pending'), await section.elementHandle())
+        }
+        await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
+        await page.waitForFunction(() => [...document.querySelectorAll('.reveal')].every(
+          el => getComputedStyle(el).opacity === '1',
+        ))
         await page.addScriptTag({ path: process.env.PORTFOLIO_AXE_PATH })
         const scan = await page.evaluate(async () => {
           const r = await window.axe.run(document, {
