@@ -140,4 +140,19 @@ toggle.addEventListener('click', () => {
     .finished.finally(() => root.classList.remove('theme-switch'))
 })
 
+// Full-size captures open as raw image documents, which cannot take part in a
+// cross-document view transition; Chrome then reports an aborted transition.
+// Opt this page out just for that navigation, and opt back in if it is restored
+// from the back/forward cache.
+addEventListener('click', (event) => {
+  if (event.defaultPrevented || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+    return
+  if (!event.target.closest?.('a[data-full-image][href^="/assets/"]:not([target],[download])'))
+    return
+  const style = document.createElement('style')
+  style.textContent = '@view-transition{navigation:none}'
+  document.head.append(style)
+  addEventListener('pageshow', () => style.remove(), { once: true })
+})
+
 enhanceCalculators()

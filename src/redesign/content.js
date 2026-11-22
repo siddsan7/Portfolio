@@ -190,6 +190,57 @@ export const projects = [
       ['Copilot route', 'app/api/growth-insights/route.ts'],
     ],
   },
+  {
+    slug: 'platonic-goal-transfer',
+    includeOnResume: false,
+    caseStudy: caseStudies['platonic-goal-transfer'],
+    name: 'Platonic Goal Transfer',
+    category: 'AI research / Controlled study',
+    kind: 'research',
+    image: '/assets/research/pgt-effects.png',
+    imageAlt:
+      'Research figure: held-out goal success at text width 2, where clean, goal_swap and trim_swap all reach 100%, and at text width 1, where clean and goal_swap reach 50% and trim_swap reaches 100%.',
+    imageWidth: 1200,
+    imageHeight: 510,
+    imageCaption: 'Research figure · held-out results',
+    screenshot: {
+      src: '/assets/research/pgt-effects.png',
+      width: 1200,
+      height: 510,
+      alt: 'Two bar panels of held-out executed goal success over five seeds. At text width 2, clean, goal_swap and trim_swap all reach 100%. At text width 1, clean and goal_swap reach 50%, level with the dashed goal-blind line, and trim_swap reaches 100%.',
+      caption: 'Original study figure from the repository. Each bar is held-out success for one text arm over five seeds. Left (two text directions): every arm reaches 100%. Right (one direction): the arm whose corrupted pairs flipped the goal shape keeps only the floor-pattern direction and falls to the 50% goal-blind line, while the arm whose corrupted pairs flipped the floor pattern still reaches 100%.',
+    },
+    premise: 'Can a robot still find the circle when some training captions name the wrong shape?',
+    summary:
+      'A simulated robot navigates to a named shape. In the third study, text-only training with consistent pairings taught invented shape names: 98.05% success, against 51.40% with scrambled pairings and 53.13% untrained. Two earlier studies tested which caption errors change the robot’s destination.',
+    methods: 'Python · NumPy · Controlled ablations · Held-out evaluation · Pre-registered prediction · Bootstrap intervals',
+    repo: 'https://github.com/siddsan7/platonic-goal-transfer',
+    status: 'Original study, held-out follow-up and alias-transfer study complete',
+    contribution:
+      'Siddharth set the goal and topic, chose the model roles and set the review requirements. For the follow-up and the alias-transfer study he wrote the predictions and chose what would change his mind. GPT-6.2 Astra and Claude Fable 5.2 planned the study. Claude Opus 5.5 implemented it and wrote the reports. GPT-6.2 Sol reviewed the code. Codex ran the experiments and verified the outputs.',
+    problem:
+      'A text encoder learns only from caption-to-caption pairs, and a frozen image-only planner executes the goals it produces. If 25% of those pairs are rewired, does rewiring the goal word (the pad’s shape) hurt more than rewiring a cosmetic floor-pattern word?',
+    sections: [
+      [
+        'Architecture',
+        'A deterministic 7×7 warehouse is rendered as pixels. A shared vision model learns from random-action walks, and a frozen planner searches over imagined moves toward a goal vector. Each text arm trains its own text encoder on 16,384 text-only pairs and fits its own orthogonal map to image latents using the same 128 clean anchors, which are the only image–text supervision.',
+      ],
+      [
+        'Current scope',
+        'Balestriero and LeCun studied the quality of training pairs. This experiment holds the error rate at 25% and changes which word is wrong. The original text task has only eight captions. In the follow-up, text training and calibration excluded eight shape–floor combinations, but the shared visual model saw all sixteen. All twelve comparisons used that same visual model. With every text method at 100%, reaching the right pad reveals little about how each method represented the instruction.',
+      ],
+    ],
+    sources: [
+      ['Original case study', 'docs/case-study.md'],
+      ['Research motivation and locked protocol', 'docs/protocol.md'],
+      ['Follow-up results', 'docs/followup-results.md'],
+      ['Committed prediction', 'docs/followup-prediction.json'],
+      ['Alias-transfer protocol', 'docs/alias-protocol.md'],
+      ['Alias-transfer results', 'docs/alias-results.md'],
+      ['Alias-transfer prediction', 'docs/alias-prediction.json'],
+      ['Alias-transfer run evidence', 'docs/evidence/alias/summary.json'],
+    ],
+  },
 ]
 
 export const skills = [

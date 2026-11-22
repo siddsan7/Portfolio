@@ -119,6 +119,11 @@ try {
   check(home.includes('href="#experience"'), 'experience has native navigation')
   for (const project of projects) {
     const html = await (await fetch(base + `/projects/${project.slug}/`)).text()
+    if (project.caseStudy.prediction) {
+      check(html.includes(project.caseStudy.role), `${project.name}: research roles are credited`)
+      check(html.includes('id="prediction"') && html.includes(project.caseStudy.prediction.source[1]),
+        `${project.name}: the prediction links to its public record`)
+    }
     for (const heading of ['Evidence at a glance', 'A consequential decision', 'Guided walkthrough'])
       check(html.includes(heading), `${project.name}: ${heading} in raw HTML`)
     check(html.includes(`blob/${project.caseStudy.revision}/`), `${project.name}: evidence links pin the reviewed revision`)

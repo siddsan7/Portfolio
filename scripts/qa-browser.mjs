@@ -48,6 +48,8 @@ try {
     await page.evaluate(async () => {
       const start = scrollY
       for (const image of document.images) {
+        // Hidden theme variants never intersect the viewport. Verify their bytes as well.
+        if (!image.getClientRects().length) image.loading = 'eager'
         image.scrollIntoView({ block: 'center' })
         await image.decode()
       }
@@ -72,7 +74,7 @@ try {
     result.enhancement.scripts.length === 1,
     'a single enhancement script is requested',
   )
-  result.contrast = await page.evaluate(() => {
+  const readContrast = () => page.evaluate(() => {
     const luminance = (color) => {
       const rgb = color
         .match(/[\d.]+/g)
@@ -90,6 +92,7 @@ try {
       '.harmony figcaption',
       '.audio figcaption',
       '.logistics figcaption',
+      '.research figcaption',
       '.skill-list p',
       'nav a',
     ].map((selector) => {
@@ -112,6 +115,13 @@ try {
       }
     })
   })
+  result.contrast = await readContrast()
+  await page.locator('.theme-toggle').click()
+  await page.waitForFunction(() => document.documentElement.dataset.theme === 'dark')
+  const darkCaption = (await readContrast()).find(c => c.selector === '.research figcaption')
+  assert(darkCaption.ratio >= 4.5, 'research caption is legible on its white background in dark mode')
+  await page.locator('.theme-toggle').click()
+  await page.waitForFunction(() => document.documentElement.dataset.theme !== 'dark')
   assert(
     result.contrast.every((c) => c.ratio >= 4.5),
     'rendered text color contrast',
@@ -382,7 +392,7 @@ try {
   )
   }
   result.textZoom =
-    'All 5 public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region'
+    `All ${routes.length} public routes at 200% text size and 320 CSS px: no page overflow; evidence tables scroll within their own region`
 
   const noJS = await browser.newContext({
     javaScriptEnabled: false,
@@ -409,7 +419,7 @@ try {
     'no-JS project navigation',
   )
   result.noJavaScript =
-    'All 5 routes, work anchor, and project navigation passed'
+    `All ${routes.length} routes, work anchor, and project navigation passed`
   await noJS.close()
 
   if (process.env.PORTFOLIO_AXE_PATH) {
@@ -417,6 +427,17 @@ try {
       await page.setViewportSize({ width, height: 900 })
       for (const route of [...routes, '/missing/']) {
         await page.goto(base + route)
+        // Read each section before measuring foreground contrast. Offscreen sections
+        // animate into view when the reader reaches them.
+        const sections = page.locator('.reveal')
+        for (const section of await sections.all()) {
+          await section.evaluate(el => el.scrollIntoView({ block: 'center', behavior: 'instant' }))
+          await page.waitForFunction(el => !el.classList.contains('reveal-pending'), await section.elementHandle())
+        }
+        await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
+        await page.waitForFunction(() => [...document.querySelectorAll('.reveal')].every(
+          el => getComputedStyle(el).opacity === '1',
+        ))
         await page.addScriptTag({ path: process.env.PORTFOLIO_AXE_PATH })
         const scan = await page.evaluate(async () => {
           const r = await window.axe.run(document, {

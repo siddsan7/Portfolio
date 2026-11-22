@@ -51,7 +51,7 @@ export default function CaseStudy({ project, nextProject }) {
         <p className="case-premise">{project.premise}</p>
         <p className="case-summary">{project.summary}</p>
         <dl className="case-facts">
-          <div><dt>My role</dt><dd>Individual project · design and implementation</dd></div>
+          <div><dt>My role</dt><dd>{detail.role || 'Individual project · design and implementation'}</dd></div>
           <div><dt>Engineering focus</dt><dd>{detail.focus}</dd></div>
           <div><dt>Evidence snapshot</dt><dd>{detail.result}</dd></div>
           <div><dt>Status</dt><dd>{project.status}</dd></div>
@@ -60,12 +60,13 @@ export default function CaseStudy({ project, nextProject }) {
         <div className="case-actions">
           <ArrowLink href="#walkthrough">Follow the walkthrough</ArrowLink>
           <ArrowLink href="#evidence">Inspect the evidence</ArrowLink>
+          {detail.alias && <ArrowLink href="#alias-study">Invented-name results</ArrowLink>}
           {detail.demo && <ArrowLink href={detail.demo.href}>{detail.demo.label}</ArrowLink>}
           <ArrowLink href={project.repo}>GitHub</ArrowLink>
         </div>
       </header>
       <figure className="product-screenshot">
-        <a href={project.screenshot.src} aria-label={`View full-size ${project.name} screenshot`}>
+        <a data-full-image href={project.screenshot.src} aria-label={`View full-size ${project.name} screenshot`}>
           <img src={project.screenshot.src} alt={project.screenshot.alt} width={project.screenshot.width} height={project.screenshot.height} loading="lazy" decoding="async" />
         </a>
         <figcaption>
@@ -76,12 +77,12 @@ export default function CaseStudy({ project, nextProject }) {
                 (<a href={project.screenshot.credit.license}>CC BY 4.0</a>), visualized with compression.</p>
             )}
           </div>
-          <a href={project.screenshot.src}>View full size <span className="arrow" aria-hidden="true"><span>↗</span></span></a>
+          <a data-full-image href={project.screenshot.src}>View full size <span className="arrow" aria-hidden="true"><span>↗</span></span></a>
         </figcaption>
       </figure>
       <div className="reading-column">
         <section><h2>The problem</h2><p>{project.problem}</p></section>
-        <section><h2>My contribution</h2><p>{project.contribution}</p></section>
+        <section><h2>{detail.role ? 'Who did what' : 'My contribution'}</h2><p>{project.contribution}</p></section>
         <section id="evidence">
           <h2>Evidence at a glance</h2>
           <p>{detail.evidenceIntro}</p>
@@ -113,11 +114,35 @@ export default function CaseStudy({ project, nextProject }) {
           <dl className="decision-story">
             <div><dt>Constraint</dt><dd>{detail.decision.constraint}</dd></div>
             <div><dt>Alternative</dt><dd>{detail.decision.alternative}</dd></div>
-            <div><dt>My choice</dt><dd>{detail.decision.choice}</dd></div>
+            <div><dt>{detail.decision.choiceLabel || 'My choice'}</dt><dd>{detail.decision.choice}</dd></div>
             <div><dt>Consequence</dt><dd>{detail.decision.consequence}</dd></div>
           </dl>
           <SourceLink project={project} source={detail.decision.source} />
         </section>
+        {detail.alias && (
+          <section id="alias-study" aria-labelledby="alias-study-heading">
+            <h2 id="alias-study-heading">{detail.alias.heading}</h2>
+            <p>{detail.alias.intro}</p>
+            <p>{detail.alias.prediction.intro}</p>
+            <blockquote className="prediction-quote"><p>{detail.alias.prediction.quote}</p></blockquote>
+            <SourceLink project={project} source={detail.alias.prediction.source} />
+            <div className="evidence-scroll" tabIndex="0" role="region" aria-label="Alias-transfer results table">
+            <table className="evidence-table">
+              <caption>{detail.alias.caption}</caption>
+              <thead><tr><th scope="col">Arm</th><th scope="col">Success</th><th scope="col">Detail</th></tr></thead>
+              <tbody>
+                {detail.alias.results.map(([arm, rate, note]) => (
+                  <tr key={arm}><th scope="row">{arm}</th><td>{rate}</td><td>{note}</td></tr>
+                ))}
+              </tbody>
+            </table>
+            </div>
+            <h3>How it was measured</h3><p>{detail.alias.measurement}</p>
+            <h3>Against the prediction</h3><p>{detail.alias.outcome}</p>
+            <h3>Limits</h3><p>{detail.alias.limits}</p>
+            <ul>{detail.alias.sources.map(source => <li key={source[1]}><SourceLink project={project} source={source} /></li>)}</ul>
+          </section>
+        )}
         <section id="walkthrough">
           <h2>Guided walkthrough</h2><p>{detail.walkthrough.intro}</p>
           <ol className="walkthrough-steps">
@@ -128,8 +153,8 @@ export default function CaseStudy({ project, nextProject }) {
                   <p>{text}</p>
                   {detail.walkthrough.images?.[index] && (
                     <figure className="walkthrough-capture">
-                      <a href={detail.walkthrough.images[index].src} aria-label={`View full-size ${title} capture`}>
-                        <img src={detail.walkthrough.images[index].src} alt={detail.walkthrough.images[index].alt} width="3200" height="2200" loading="lazy" decoding="async" />
+                      <a data-full-image href={detail.walkthrough.images[index].src} aria-label={`View full-size ${title} capture`}>
+                        <img src={detail.walkthrough.images[index].src} alt={detail.walkthrough.images[index].alt} width={detail.walkthrough.images[index].width || 3200} height={detail.walkthrough.images[index].height || 2200} loading="lazy" decoding="async" />
                       </a>
                       <figcaption>{detail.walkthrough.images[index].caption}</figcaption>
                     </figure>
@@ -142,6 +167,17 @@ export default function CaseStudy({ project, nextProject }) {
           <SourceLink project={project} source={detail.walkthrough.source} />
           {detail.walkthrough.captureSource && <ArrowLink href={detail.walkthrough.captureSource}>Capture conditions and observations</ArrowLink>}
         </section>
+        {detail.prediction && (
+          <section id="prediction">
+            <h2>The prediction, tested</h2>
+            <p>{detail.prediction.intro}</p>
+            <blockquote className="prediction-quote">
+              {detail.prediction.quotes.map(quote => <p key={quote}>{quote}</p>)}
+            </blockquote>
+            <p>{detail.prediction.outcome}</p>
+            <SourceLink project={project} source={detail.prediction.source} />
+          </section>
+        )}
         <section><h2>Current scope</h2><p>{scope}</p></section>
         <section className="sources">
           <h2>Source evidence</h2>
