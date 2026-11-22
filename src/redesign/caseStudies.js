@@ -138,8 +138,8 @@ export const caseStudies = {
   },
   'platonic-goal-transfer': {
     title: 'Platonic Goal Transfer | Controlled study of corrupted text pairs',
-    revision: 'c0abcc3436057b61b0f0c431986092eff9bcf7d3',
-    status: 'Completed toy-scale study · AI-agent implementation',
+    revision: '498759dc4f4461beea62280a7bb5d48035365fb0',
+    status: 'Three completed toy-scale studies · AI-agent implementation',
     role: 'Research question, prediction and decision threshold · AI agents planned, built, reviewed and ran the study',
     focus: 'Controlled ablations, held-out evaluation, pre-registered prediction',
     result: 'With one text dimension, the robot scored 50% with shape errors and 100% with floor-pattern errors. With two dimensions, both scored 100%.',
@@ -192,10 +192,29 @@ export const caseStudies = {
       outcome: 'Points 1 and 2 were not supported: trim_swap and goal_swap tied at 0 pp, and raw word counts scored 4,608/4,608. The tie condition in point 3, within about 5 points, was met.',
       source: ['Exact committed prediction', 'docs/followup-prediction.json'],
     },
-    planned: {
-      heading: 'Next experiment',
-      text: 'Can a model learn an invented name for a shape from text alone? The published protocol compares consistent word pairings with scrambled pairings and an untrained model. It measures how closely each instruction points to the intended pad, even when two models take the same route. The experiment is awaiting its first run.',
-      source: ['Alias-transfer protocol', 'docs/alias-protocol.md'],
+    alias: {
+      heading: 'Learning invented shape names',
+      intro: 'Can a model learn the word “vexlo” for a circle without seeing an image labeled “vexlo”? We tested four invented words across eight dictionaries. Within each dictionary, consistent training pairs linked each word to one shape. Scrambled pairs linked it equally often to all four. The third encoder kept its initial weights. All three used the same image calibration examples labeled with ordinary shape names.',
+      prediction: {
+        intro: 'Siddharth wrote this prediction before the invented-name experiment.',
+        quote: 'I think consistent pairings will point more clearly to the circle because vexlo always refers to the same shape. I’d expect scrambled and untrained to be close. If either ties or beats consistent pairings, that would change my mind.',
+        source: ['Exact prediction', 'docs/alias-prediction.json'],
+      },
+      caption: 'Success on invented-word instructions, 6,144 episodes per arm',
+      results: [
+        ['Consistent pairings', '98.05%', '6,024 of 6,144 reached the intended pad'],
+        ['Scrambled pairings', '51.40%', '3,158 of 6,144'],
+        ['Untrained text model', '53.13%', '3,264 of 6,144'],
+        ['Raw word counts', '50.00%', '3,072 of 6,144. Switching only the invented word gives the same goal vector.'],
+      ],
+      measurement: 'Success means the frozen planner reached the pad the instruction named. The primary measure looks before any movement: for each instruction it takes the squared distance from the goal vector to the wrong pad minus the squared distance to the intended pad, so a positive number favours the intended pad. The consistent arm’s mean margin exceeded the scrambled arm’s by 8.61 on the invented words.',
+      outcome: 'Consistent pairings led both comparisons. The untrained encoder finished 1.73 percentage points above scrambled pairings and had a 0.50-unit higher mean margin. Siddharth gave no cutoff for “close”, so those gaps are reported descriptively.',
+      limits: 'The study reused 12 boards from the previous experiment. The 8.61-unit difference varied little across them. Resampling those boards gives a narrow interval, conditional on one fitted vision model, one set of calibration examples and eight dictionaries.',
+      sources: [
+        ['Alias-transfer results', 'docs/alias-results.md'],
+        ['Run summary and evidence', 'docs/evidence/alias/summary.json'],
+        ['Alias-transfer protocol', 'docs/alias-protocol.md'],
+      ],
     },
   },
 }

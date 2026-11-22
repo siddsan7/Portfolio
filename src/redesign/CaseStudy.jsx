@@ -60,6 +60,7 @@ export default function CaseStudy({ project, nextProject }) {
         <div className="case-actions">
           <ArrowLink href="#walkthrough">Follow the walkthrough</ArrowLink>
           <ArrowLink href="#evidence">Inspect the evidence</ArrowLink>
+          {detail.alias && <ArrowLink href="#alias-study">Invented-name results</ArrowLink>}
           {detail.demo && <ArrowLink href={detail.demo.href}>{detail.demo.label}</ArrowLink>}
           <ArrowLink href={project.repo}>GitHub</ArrowLink>
         </div>
@@ -118,6 +119,30 @@ export default function CaseStudy({ project, nextProject }) {
           </dl>
           <SourceLink project={project} source={detail.decision.source} />
         </section>
+        {detail.alias && (
+          <section id="alias-study" aria-labelledby="alias-study-heading">
+            <h2 id="alias-study-heading">{detail.alias.heading}</h2>
+            <p>{detail.alias.intro}</p>
+            <p>{detail.alias.prediction.intro}</p>
+            <blockquote className="prediction-quote"><p>{detail.alias.prediction.quote}</p></blockquote>
+            <SourceLink project={project} source={detail.alias.prediction.source} />
+            <div className="evidence-scroll" tabIndex="0" role="region" aria-label="Alias-transfer results table">
+            <table className="evidence-table">
+              <caption>{detail.alias.caption}</caption>
+              <thead><tr><th scope="col">Arm</th><th scope="col">Success</th><th scope="col">Detail</th></tr></thead>
+              <tbody>
+                {detail.alias.results.map(([arm, rate, note]) => (
+                  <tr key={arm}><th scope="row">{arm}</th><td>{rate}</td><td>{note}</td></tr>
+                ))}
+              </tbody>
+            </table>
+            </div>
+            <h3>How it was measured</h3><p>{detail.alias.measurement}</p>
+            <h3>Against the prediction</h3><p>{detail.alias.outcome}</p>
+            <h3>Limits</h3><p>{detail.alias.limits}</p>
+            <ul>{detail.alias.sources.map(source => <li key={source[1]}><SourceLink project={project} source={source} /></li>)}</ul>
+          </section>
+        )}
         <section id="walkthrough">
           <h2>Guided walkthrough</h2><p>{detail.walkthrough.intro}</p>
           <ol className="walkthrough-steps">
@@ -154,13 +179,6 @@ export default function CaseStudy({ project, nextProject }) {
           </section>
         )}
         <section><h2>Current scope</h2><p>{scope}</p></section>
-        {detail.planned && (
-          <section id="next-study">
-            <h2>{detail.planned.heading}</h2>
-            <p>{detail.planned.text}</p>
-            <SourceLink project={project} source={detail.planned.source} />
-          </section>
-        )}
         <section className="sources">
           <h2>Source evidence</h2>
           <p>Implementation and documentation pinned to the reviewed source revision.</p>

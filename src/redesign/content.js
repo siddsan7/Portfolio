@@ -212,12 +212,12 @@ export const projects = [
     },
     premise: 'Can a robot still find the circle when some training captions name the wrong shape?',
     summary:
-      'A simulated robot navigates to a named shape. Two experiments test which caption errors change its destination and whether a simple word-count baseline can keep up.',
+      'A simulated robot navigates to a named shape. In the third study, text-only training with consistent pairings taught invented shape names: 98.05% success, against 51.40% with scrambled pairings and 53.13% untrained. Two earlier studies tested which caption errors change the robot’s destination.',
     methods: 'Python · NumPy · Controlled ablations · Held-out evaluation · Pre-registered prediction · Bootstrap intervals',
     repo: 'https://github.com/siddsan7/platonic-goal-transfer',
-    status: 'Original study and held-out follow-up complete',
+    status: 'Original study, held-out follow-up and alias-transfer study complete',
     contribution:
-      'Siddharth set the goal and topic, chose the model roles and set the review requirements. For the follow-up he wrote the prediction and chose the threshold for reconsidering it. GPT-6.2 Astra and Claude Fable 5.2 planned the study. Claude Opus 5.5 implemented it and wrote the reports. GPT-6.2 Sol reviewed the code. Codex ran the experiments and verified the outputs.',
+      'Siddharth set the goal and topic, chose the model roles and set the review requirements. For the follow-up and the alias-transfer study he wrote the predictions and chose what would change his mind. GPT-6.2 Astra and Claude Fable 5.2 planned the study. Claude Opus 5.5 implemented it and wrote the reports. GPT-6.2 Sol reviewed the code. Codex ran the experiments and verified the outputs.',
     problem:
       'A text encoder learns only from caption-to-caption pairs, and a frozen image-only planner executes the goals it produces. If 25% of those pairs are rewired, does rewiring the goal word (the pad’s shape) hurt more than rewiring a cosmetic floor-pattern word?',
     sections: [
@@ -235,7 +235,10 @@ export const projects = [
       ['Research motivation and locked protocol', 'docs/protocol.md'],
       ['Follow-up results', 'docs/followup-results.md'],
       ['Committed prediction', 'docs/followup-prediction.json'],
-      ['Alias-transfer protocol (not run)', 'docs/alias-protocol.md'],
+      ['Alias-transfer protocol', 'docs/alias-protocol.md'],
+      ['Alias-transfer results', 'docs/alias-results.md'],
+      ['Alias-transfer prediction', 'docs/alias-prediction.json'],
+      ['Alias-transfer run evidence', 'docs/evidence/alias/summary.json'],
     ],
   },
 ]
