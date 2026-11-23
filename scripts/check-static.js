@@ -38,6 +38,14 @@ try {
       `${route}: unique description`,
     )
     descriptions.add(description)
+    const descriptionLength = (description ?? '')
+      .replaceAll('&quot;', '"')
+      .replaceAll('&lt;', '<')
+      .replaceAll('&amp;', '&').length
+    check(
+      descriptionLength >= 25 && descriptionLength <= 160,
+      `${route}: description is 25-160 characters (${descriptionLength})`,
+    )
     check(
       html.includes(`property="og:title" content="${title}"`) &&
         html.includes(`name="twitter:title" content="${title}"`),
