@@ -33,6 +33,11 @@ try {
     const description = html.match(/name="description" content="([^"]+)"/)?.[1]
     check(title && !titles.has(title), `${route}: unique title`)
     titles.add(title)
+    const titleLength = (title ?? '')
+      .replaceAll('&quot;', '"')
+      .replaceAll('&lt;', '<')
+      .replaceAll('&amp;', '&').length
+    check(titleLength <= 70, `${route}: title is at most 70 characters (${titleLength})`)
     check(
       description && !descriptions.has(description),
       `${route}: unique description`,
