@@ -197,12 +197,11 @@ export const projects = [
     name: 'Platonic Goal Transfer',
     category: 'AI research / Controlled study',
     kind: 'research',
-    image: '/assets/research/pgt-effects.png',
+    image: '/assets/artwork/platonic-goal-crisp.svg',
     imageAlt:
-      'Research figure: held-out goal success at text width 2, where clean, goal_swap and trim_swap all reach 100%, and at text width 1, where clean and goal_swap reach 50% and trim_swap reaches 100%.',
-    imageWidth: 1200,
-    imageHeight: 510,
-    imageCaption: 'Research figure · held-out results',
+      'Concept illustration of a striped 7×7 grid world under the caption “head for the circle tile where the floor is striped”. A solid path from the robot reaches the circle pad and a dotted path ends at the triangle pad, beside a pipeline from caption pairs through the text encoder and goal vector to a frozen planner.',
+    imageWidth: 960,
+    imageHeight: 576,
     screenshot: {
       src: '/assets/research/pgt-effects.png',
       width: 1200,
