@@ -213,6 +213,10 @@ export const projects = [
     premise: 'Can a robot still find the circle when some training captions name the wrong shape?',
     summary:
       'A simulated robot navigates to a named shape. In the third study, text-only training with consistent pairings taught invented shape names: 98.05% success, against 51.40% with scrambled pairings and 53.13% untrained. Two earlier studies tested which caption errors change the robot’s destination.',
+    // Search engines show at most ~160 characters, so the page's meta
+    // description uses this shorter form of the summary above.
+    metaDescription:
+      'A simulated robot learned invented shape names from text-only training: 98.05% success with consistent pairings, against 51.40% with scrambled pairings.',
     methods: 'Python · NumPy · Controlled ablations · Held-out evaluation · Pre-registered prediction · Bootstrap intervals',
     repo: 'https://github.com/siddsan7/platonic-goal-transfer',
     status: 'Original study, held-out follow-up and alias-transfer study complete',

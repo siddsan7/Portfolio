@@ -41,13 +41,13 @@ for (const path of [
             : 'Page not found | Siddharth Sanjay'
   const description =
     path === '/'
-      ? `${person.name}, AI engineer and ASU computer science graduate. RAG and Google Cloud work at SkipCourse, grounded AI recommendations, and evaluated assistant systems.`
+      ? `${person.name}, AI engineer and ASU computer science graduate. RAG and Google Cloud at SkipCourse, grounded AI recommendations, and evaluated assistants.`
       : project
-        ? project.summary
+        ? (project.metaDescription ?? project.summary)
         : path === '/resume/'
           ? 'Education, software engineering experience, and featured projects from Siddharth Sanjay. Read the HTML résumé or download the PDF.'
           : archived
-            ? `An archived portfolio entry for ${archived.title}. Earlier notes are preserved for reference and have not been reverified for the current portfolio.`
+            ? `An archived portfolio entry for ${archived.title}. Earlier notes are kept for reference and have not been reverified.`
             : 'This page could not be found. Return to Siddharth Sanjay’s portfolio.'
   const canonical = `${person.domain}${path}`
   const notFound = path === '/404.html'
