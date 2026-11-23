@@ -239,10 +239,13 @@ try {
     '\n',
   )
   check(
-    robots.includes('User-agent: GPTBot\nDisallow: /') &&
-      robots.includes('User-agent: OAI-SearchBot\nAllow: /'),
-    'separate training/search policy',
+    robots.includes('User-agent: *\nAllow: /') && !/Disallow/i.test(robots),
+    'robots allows every crawler and AI agent',
   )
+  const llms = await readFile('dist/llms.txt', 'utf8')
+  check(llms.startsWith(`# ${person.name}\n`), 'llms.txt title')
+  for (const route of routes)
+    check(llms.includes(`(${person.domain}${route})`), `llms.txt ${route}`)
   const config = JSON.parse(await readFile('vercel.json', 'utf8'))
   check(!config.rewrites, 'no blanket SPA fallback')
   await access('dist/social/portfolio.png')

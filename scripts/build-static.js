@@ -2,7 +2,8 @@ import { build } from 'vite'
 import { mkdir, readFile, writeFile, unlink } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { person, projects, routes } from '../src/redesign/content.js'
+import { person, projects, routes, skills } from '../src/redesign/content.js'
+import { resume } from '../src/redesign/resume.js'
 import { projects as archivedProjects } from '../src/data/projects.js'
 
 await build({ build: { rollupOptions: { input: resolve('redesign.html') } } })
@@ -99,6 +100,45 @@ await unlink('dist/redesign.html')
 await writeFile(
   'dist/sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map((path) => `<url><loc>${person.domain}${path}</loc></url>`).join('')}</urlset>\n`,
+)
+// llms.txt (https://llmstxt.org): a plain-text map of the site for AI agents,
+// built from the same data as the pages so the two never disagree.
+await writeFile(
+  'dist/llms.txt',
+  [
+    `# ${person.name}`,
+    `> ${person.name}, ${person.role}. Focus: ${person.premise} ${person.summary}`,
+    person.about.join('\n\n'),
+    `## Pages`,
+    [
+      `- [Home](${person.domain}/): About, experience, featured projects, and skills.`,
+      `- [Résumé](${person.domain}/resume/): Education, experience, and projects as a web page.`,
+    ].join('\n'),
+    `## Projects`,
+    projects
+      .map(
+        (p) =>
+          `- [${p.name}](${person.domain}/projects/${p.slug}/): ${p.summary} ${p.contribution} Status: ${p.status}. Source: ${p.repo}`,
+      )
+      .join('\n'),
+    `## Experience`,
+    `${resume.education}, ${resume.graduation}.`,
+    resume.experience
+      .map(
+        (job) =>
+          `- ${job.title}, ${job.organization} (${job.dates}): ${job.bullets.join(' ')}`,
+      )
+      .join('\n'),
+    `## Skills`,
+    skills.map(([area, list]) => `- ${area}: ${list}`).join('\n'),
+    `## Contact`,
+    [
+      `- [GitHub](${person.github})`,
+      `- [LinkedIn](${person.linkedin})`,
+      `- [Résumé document](${person.resume})`,
+      `- Email: ${person.email}`,
+    ].join('\n'),
+  ].join('\n\n') + '\n',
 )
 if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
   const { readdir } = await import('node:fs/promises')
