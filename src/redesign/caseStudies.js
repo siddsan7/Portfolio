@@ -45,7 +45,7 @@ export const caseStudies = {
     },
   },
   tonescope: {
-    title: 'ToneScope | Reversible audio assistant and native DSP',
+    title: 'ToneScope | Reversible audio assistant',
     revision: '1c32a38875ebf08d81b8e0f2bc5f95233b06cc0d',
     status: 'Independent native development build',
     focus: 'Native state safety, DSP, deterministic assistant evaluation',
@@ -91,7 +91,7 @@ export const caseStudies = {
     },
   },
   'truckerpath-dispatcher-os': {
-    title: 'Dispatcher OS | Explainable ranking and AI product copilot',
+    title: 'Dispatcher OS | Explainable load ranking',
     revision: '0a4eb4ebd0e2666529958b12229d2c8d05c43e20',
     status: 'Independent prototype · seeded data',
     focus: 'Explainable scoring, dispatch workflows, optional Gemini integration',
@@ -137,7 +137,7 @@ export const caseStudies = {
     },
   },
   'platonic-goal-transfer': {
-    title: 'Platonic Goal Transfer | Controlled study of corrupted text pairs',
+    title: 'Platonic Goal Transfer | Controlled caption study',
     revision: '498759dc4f4461beea62280a7bb5d48035365fb0',
     status: 'Three completed toy-scale studies · AI-agent implementation',
     role: 'Research question, prediction and decision threshold · AI agents planned, built, reviewed and ran the study',
