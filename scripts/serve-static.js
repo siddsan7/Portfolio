@@ -1,4 +1,5 @@
 import { createServer } from 'node:http'
+import { readFileSync } from 'node:fs'
 import { readFile, stat } from 'node:fs/promises'
 import { resolve, extname, sep } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -18,6 +19,12 @@ const types = {
   '.png': 'image/png',
   '.webp': 'image/webp',
 }
+// The résumé redirects live only in vercel.json; mirror them so local checks
+// see the same status and destination as production.
+const fileRedirects = JSON.parse(
+  readFileSync(resolve('vercel.json'), 'utf8'),
+).redirects.filter((rule) => rule.source.endsWith('.pdf') && !rule.has)
+
 export function createStaticServer(root = resolve('dist')) {
   return createServer(async (request, response) => {
     const url = new URL(request.url, 'http://localhost')
@@ -33,6 +40,14 @@ export function createStaticServer(root = resolve('dist')) {
     if (host === 'www.siddharthsanjay.com') {
       response.writeHead(308, {
         Location: `${person.domain}${url.pathname}${url.search}`,
+      })
+      response.end()
+      return
+    }
+    const fileRedirect = fileRedirects.find((rule) => rule.source === path)
+    if (fileRedirect) {
+      response.writeHead(fileRedirect.permanent ? 308 : 307, {
+        Location: fileRedirect.destination,
       })
       response.end()
       return

@@ -1,6 +1,8 @@
 // Transcribed from the owner-supplied PDF; ASU end date and bullets updated by the owner on 2026-10-20.
 // Unrelated older projects and unconfirmed quantitative claims are omitted.
-export const resumeUrl = 'https://drive.google.com/file/d/1XvLeMJpulC5ZLvuqZvRjcan72RC7Xgi-/view?usp=drive_link'
+// A stable address on this domain. vercel.json forwards it to the current
+// Google Drive file, so changing the Drive file never changes this link.
+export const resumeUrl = '/resume.pdf'
 
 export const resume = {
   education:

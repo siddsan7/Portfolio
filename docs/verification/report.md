@@ -35,7 +35,7 @@ Mobile lab LCP passed at 1657, 2259 and 1656 ms, with CLS 0 and performance scor
 
 Isolated committed export `536c182` passed locked dependency installation, lint/build, 218 static assertions, preview indexing/production restore, PDF checks and the complete browser suite. This verifies that unrelated local legacy edits are not required. Lockfile install reports 18 existing audit findings (13 high); omit-dev audit reports ten including build tools and legacy React Router, which is outside the active frontend. Dependencies are unchanged; no vulnerability-remediation claim is made. Track dependency maintenance separately.
 
-`desktop.png`, `mobile.png`, `case-study.png` and `resume.png` are actual generated-page captures. `browser-results.json`, `pdf-results.json` and `lcp-results.json` contain current compact results. Raw browser/lab logs are ignored. Product screenshot and walkthrough capture provenance is in `../visuals/`; original artwork hashes remain enforced.
+`desktop.png`, `mobile.png`, `case-study.png` and `resume.png` are actual generated-page captures. `browser-results.json` and `lcp-results.json` contain current compact results; `pdf-results.json` is kept as a record of the former self-hosted PDF, which `/resume.pdf` now replaces with a redirect to Google Drive. Raw browser/lab logs are ignored. Product screenshot and walkthrough capture provenance is in `../visuals/`; original artwork hashes remain enforced.
 
 ## Release boundary and limitations
 

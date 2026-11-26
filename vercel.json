@@ -26,13 +26,19 @@
     { "source": "/skills/", "destination": "/#skills", "permanent": true },
     { "source": "/contact/", "destination": "/#contact", "permanent": true },
     { "source": "/experience/", "destination": "/resume/", "permanent": true },
-    { "source": "/projects/", "destination": "/#work", "permanent": true }
-  ],
-  "headers": [
+    { "source": "/projects/", "destination": "/#work", "permanent": true },
+    {
+      "source": "/resume.pdf",
+      "destination": "https://drive.google.com/file/d/1XvLeMJpulC5ZLvuqZvRjcan72RC7Xgi-/view?usp=drive_link",
+      "permanent": false
+    },
     {
       "source": "/Siddharth-Sanjay-Resume.pdf",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
-    },
+      "destination": "/resume.pdf",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/llms.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]

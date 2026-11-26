@@ -81,7 +81,11 @@ try {
     )
     for (const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
       const href = match[1].replaceAll('&amp;', '&')
-      if (href.startsWith('/')) {
+      if (href === '/resume.pdf') {
+        // Stop at the redirect so these checks never depend on Google Drive.
+        const target = await fetch(base + href, { redirect: 'manual' })
+        check(target.status === 307, `${route}: résumé link ${href} redirects`)
+      } else if (href.startsWith('/')) {
         const target = await fetch(base + href)
         check(target.status === 200, `${route}: local asset/link ${href}`)
         if (href.includes('#'))
@@ -172,17 +176,32 @@ try {
       `${source}: legacy redirect`,
     )
   }
-  const pdf = await fetch(base + '/Siddharth-Sanjay-Resume.pdf')
+  const resumeRule = hosting.redirects.find((rule) => rule.source === '/resume.pdf')
   check(
-    pdf.status === 200 && pdf.headers.get('content-type') === 'application/pdf',
-    'PDF available',
+    resumeRule?.destination.startsWith('https://drive.google.com/') &&
+      resumeRule.permanent === false,
+    '/resume.pdf: temporary hosting redirect to the Google Drive résumé',
   )
+  const resumeRedirect = await fetch(base + '/resume.pdf', { redirect: 'manual' })
   check(
-    pdf.headers.get('x-robots-tag') === 'noindex, follow',
-    'PDF deliberately excluded from separate indexing',
+    resumeRedirect.status === 307 &&
+      resumeRedirect.headers.get('location') === resumeRule?.destination,
+    '/resume.pdf: 307 to the Drive file',
   )
-  const bytes = Buffer.from(await pdf.arrayBuffer())
-  check(bytes.subarray(0, 5).toString() === '%PDF-', 'valid PDF signature')
+  const oldPdf = await fetch(base + '/Siddharth-Sanjay-Resume.pdf', { redirect: 'manual' })
+  check(
+    oldPdf.status === 308 && oldPdf.headers.get('location') === '/resume.pdf',
+    '/Siddharth-Sanjay-Resume.pdf: old address forwards to /resume.pdf',
+  )
+  const resumePage = await (await fetch(base + '/resume/')).text()
+  for (const [route, html] of [['/', home], ['/resume/', resumePage]]) {
+    check(html.includes('href="/resume.pdf"'), `${route}: résumé links use /resume.pdf`)
+    check(!html.includes('drive.google.com'), `${route}: Drive address kept only in vercel.json`)
+  }
+  check(
+    await access('dist/Siddharth-Sanjay-Resume.pdf').then(() => false, () => true),
+    'no stale self-hosted résumé PDF in the build',
+  )
   const sitemap = await readFile('dist/sitemap.xml', 'utf8')
   for (const project of archivedProjects) {
     const route = `/projects/${project.slug}/`
