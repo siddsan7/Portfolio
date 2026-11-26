@@ -22,7 +22,7 @@ const types = {
 // The résumé redirects live only in vercel.json; mirror them so local checks
 // see the same status and destination as production.
 const fileRedirects = JSON.parse(
-  readFileSync(resolve('vercel.json'), 'utf8'),
+  readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'),
 ).redirects.filter((rule) => rule.source.endsWith('.pdf') && !rule.has)
 
 export function createStaticServer(root = resolve('dist')) {

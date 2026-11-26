@@ -278,6 +278,8 @@ try {
   check(llms.startsWith(`# ${person.name}\n`), 'llms.txt title')
   for (const route of routes)
     check(llms.includes(`(${person.domain}${route})`), `llms.txt ${route}`)
+  for (const [, link] of llms.matchAll(/\]\(([^)]+)\)/g))
+    check(/^(https:|mailto:)/.test(link), `llms.txt link is absolute: ${link}`)
   const config = JSON.parse(await readFile('vercel.json', 'utf8'))
   check(!config.rewrites, 'no blanket SPA fallback')
   await access('dist/social/portfolio.png')
