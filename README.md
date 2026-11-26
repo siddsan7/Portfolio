@@ -29,7 +29,7 @@ React renders HTML at build time with Vite. CSS loads immediately. One small dep
 - `scripts/build-static.js`: complete HTML, metadata, structured data, sitemap, preview noindex.
 - `scripts/serve-static.js`: local strict serving, 308 redirects, 404s, compression and headers.
 - `public/fonts/`: unchanged Karrik Regular WOFF2 and its OFL license/source credit.
-- `public/Siddharth-Sanjay-Resume.pdf`: selectable PDF generated from the HTML résumé.
+- `vercel.json`: `/resume.pdf` is a temporary redirect to the résumé on Google Drive, and every résumé link on the site uses `/resume.pdf`. Replace the Drive file with Manage versions → Upload new version to keep its link; if the Drive link ever changes, update only this redirect.
 
 The earlier `src/App.jsx`, components/pages and data remain as source history. They include pre-existing uncommitted edits and are not redesign entry points. Only `src/data/projects.js` is read to preserve six earlier project URLs as labeled, noindex archives. Do not publish its old claims as current facts.
 

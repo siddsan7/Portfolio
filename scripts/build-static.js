@@ -135,7 +135,7 @@ await writeFile(
     [
       `- [GitHub](${person.github})`,
       `- [LinkedIn](${person.linkedin})`,
-      `- [Résumé document](${person.resume})`,
+      `- [Résumé document](${new URL(person.resume, person.domain).href})`,
       `- Email: ${person.email}`,
     ].join('\n'),
   ].join('\n\n') + '\n',

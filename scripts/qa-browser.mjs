@@ -128,19 +128,6 @@ try {
   )
 
   if (process.argv.includes('--assets')) {
-    await visit(`${base}/resume/`)
-    await page.evaluate(() => document.fonts.ready)
-    // Print links must remain usable when the PDF leaves the preview server.
-    await page.evaluate((domain) => {
-      for (const link of document.querySelectorAll('a[href^="/"]'))
-        link.href = new URL(link.getAttribute('href'), domain).href
-    }, person.domain)
-    await page.pdf({
-      path: 'public/Siddharth-Sanjay-Resume.pdf',
-      format: 'A4',
-      margin: { top: '16mm', bottom: '16mm', left: '16mm', right: '16mm' },
-      tagged: true,
-    })
     await mkdir('public/social', { recursive: true })
     const font = (await readFile('public/fonts/Karrik-Regular.woff2')).toString(
       'base64',
