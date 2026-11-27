@@ -340,6 +340,90 @@ section[id],
 .arrow-link:focus-visible {
   text-decoration-color: var(--copper);
 }
+/* Brand buttons: each one takes its colours and shape from the brand's own
+   buttons (GitHub's dark "Sign in with GitHub" button, LinkedIn's blue pill)
+   and shows the brand's logo, so the link reads as that site at a glance. */
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1;
+  transition:
+    background-color 200ms,
+    border-color 200ms,
+    transform 160ms var(--ease-out);
+}
+.brand-button:active {
+  transform: scale(0.97);
+}
+.brand-mark {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  transition: transform 420ms var(--ease-out);
+}
+.brand-button:hover .brand-mark,
+.brand-button:focus-visible .brand-mark {
+  transform: rotate(-12deg) scale(1.1);
+}
+.github-button {
+  border-color: #1f2328;
+  border-radius: 6px;
+  background: #1f2328;
+  color: #fff;
+}
+.github-button:hover,
+.github-button:focus-visible {
+  background: #32383f;
+  border-color: #32383f;
+}
+[data-theme='dark'] .github-button {
+  background: #212830;
+  border-color: #3d444d;
+  color: #f0f6fc;
+}
+[data-theme='dark'] .github-button:hover,
+[data-theme='dark'] .github-button:focus-visible {
+  background: #2a313c;
+  border-color: #656c76;
+}
+.linkedin-button {
+  padding-inline: 18px;
+  border-color: #0a66c2;
+  border-radius: 999px;
+  background: #0a66c2;
+  color: #fff;
+}
+.linkedin-button:hover,
+.linkedin-button:focus-visible {
+  background: #004182;
+  border-color: #004182;
+}
+[data-theme='dark'] .linkedin-button {
+  background: #71b7fb;
+  border-color: #71b7fb;
+  color: #1b1f23;
+}
+[data-theme='dark'] .linkedin-button:hover,
+[data-theme='dark'] .linkedin-button:focus-visible {
+  background: #a8d4ff;
+  border-color: #a8d4ff;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-button,
+  .brand-mark {
+    transition: none;
+  }
+  .brand-button:hover .brand-mark,
+  .brand-button:focus-visible .brand-mark {
+    transform: none;
+  }
+}
 /* Slide-through arrow: the glyph leaves on its own heading while a copy,
    drawn as its shadow, arrives from the opposite corner. */
 .arrow {
@@ -1804,6 +1888,13 @@ a:focus-visible .arrow.down > span {
   .contact-links a {
     color: inherit;
     min-height: 24px;
+  }
+  .contact-links .brand-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-weight: inherit;
   }
   .reading-column section {
     margin-top: 18px;

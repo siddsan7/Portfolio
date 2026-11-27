@@ -4,6 +4,7 @@ import Navigation from './Navigation.jsx'
 import { ProjectVisual, Resonance } from './Artwork.jsx'
 import { projects as archivedProjects } from '../data/projects.js'
 import ArrowLink from './ArrowLink.jsx'
+import { GitHubLink, LinkedInLink } from './BrandLinks.jsx'
 import CaseStudy from './CaseStudy.jsx'
 
 function SectionHeading({ number, label, title, children }) {
@@ -48,12 +49,7 @@ function ProjectPanel({ project, index }) {
             Case study
           </ArrowLink>
           <ArrowLink href={`/projects/${project.slug}/#walkthrough`}>Walkthrough</ArrowLink>
-          <ArrowLink
-            href={project.repo}
-            aria-label={`${project.name} on GitHub`}
-          >
-            GitHub
-          </ArrowLink>
+          <GitHubLink href={project.repo} aria-label={`${project.name} on GitHub`} />
         </div>
       </div>
     </article>
@@ -170,8 +166,8 @@ function Home() {
             {person.email}
           </a>
           <div className="contact-links">
-            <ArrowLink href={person.github}>GitHub</ArrowLink>
-            <ArrowLink href={person.linkedin}>LinkedIn</ArrowLink>
+            <GitHubLink href={person.github} />
+            <LinkedInLink href={person.linkedin} />
             <ArrowLink href={person.resume}>Résumé</ArrowLink>
           </div>
         </div>
@@ -201,8 +197,8 @@ function Resume() {
           <ArrowLink href={`mailto:${person.email}`}>{person.email}</ArrowLink>
         </div>
         <div className="contact-links">
-          <ArrowLink href={person.github}>GitHub</ArrowLink>
-          <ArrowLink href={person.linkedin}>LinkedIn</ArrowLink>
+          <GitHubLink href={person.github} />
+          <LinkedInLink href={person.linkedin} />
         </div>
       </header>
       <p className="print-contact">
