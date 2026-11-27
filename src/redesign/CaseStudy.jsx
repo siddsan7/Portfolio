@@ -1,4 +1,5 @@
 import ArrowLink from './ArrowLink.jsx'
+import { GitHubLink } from './BrandLinks.jsx'
 
 function SourceLink({ project, source }) {
   return (
@@ -62,7 +63,7 @@ export default function CaseStudy({ project, nextProject }) {
           <ArrowLink href="#evidence">Inspect the evidence</ArrowLink>
           {detail.alias && <ArrowLink href="#alias-study">Invented-name results</ArrowLink>}
           {detail.demo && <ArrowLink href={detail.demo.href}>{detail.demo.label}</ArrowLink>}
-          <ArrowLink href={project.repo}>GitHub</ArrowLink>
+          <GitHubLink href={project.repo} aria-label={`${project.name} on GitHub`} />
         </div>
       </header>
       <figure className="product-screenshot">

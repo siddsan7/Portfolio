@@ -220,7 +220,7 @@ export const projects = [
     repo: 'https://github.com/siddsan7/platonic-goal-transfer',
     status: 'Original study, held-out follow-up and alias-transfer study complete',
     contribution:
-      'Siddharth set the goal and topic, chose the model roles and set the review requirements. For the follow-up and the alias-transfer study he wrote the predictions and chose what would change his mind. GPT-6.2 Astra and Claude Fable 5.2 planned the study. Claude Opus 5.5 implemented it and wrote the reports. GPT-6.2 Sol reviewed the code. Codex ran the experiments and verified the outputs.',
+      'I set the goal and topic, chose the model roles and set the review requirements. For the follow-up and the alias-transfer study I wrote the predictions and chose what would change my mind. I used GPT-6.2 Astra and Claude Fable 5.2 to plan the study, Claude Opus 5.5 to implement it and write the reports, and GPT-6.2 Sol to review the code. I used Codex to run the experiments and verify the outputs.',
     problem:
       'A text encoder learns only from caption-to-caption pairs, and a frozen image-only planner executes the goals it produces. If 25% of those pairs are rewired, does rewiring the goal word (the pad’s shape) hurt more than rewiring a cosmetic floor-pattern word?',
     sections: [
