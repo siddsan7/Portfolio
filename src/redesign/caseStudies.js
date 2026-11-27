@@ -140,7 +140,7 @@ export const caseStudies = {
     title: 'Platonic Goal Transfer | Controlled caption study',
     revision: '498759dc4f4461beea62280a7bb5d48035365fb0',
     status: 'Three completed toy-scale studies · AI-agent implementation',
-    role: 'Research question, prediction and decision threshold · AI agents planned, built, reviewed and ran the study',
+    role: 'Research question, prediction and decision threshold · I used AI agents to plan, build, review and run the study',
     focus: 'Controlled ablations, held-out evaluation, pre-registered prediction',
     result: 'With one text dimension, the robot scored 50% with shape errors and 100% with floor-pattern errors. With two dimensions, both scored 100%.',
     methods: 'Python · NumPy · Representation learning · Paired evaluation',
@@ -183,7 +183,7 @@ export const caseStudies = {
       source: ['Replayed episode records', 'docs/evidence/replay.json'],
     },
     prediction: {
-      intro: 'Siddharth wrote this prediction. Codex committed it to the repository before training began.',
+      intro: 'I wrote this prediction and used Codex to commit it to the repository before training began.',
       quotes: [
         '1) since the measurement is based on the target shape, I think the training pair which disagrees about the floor pattern should function better more often.',
         "2) I don't expect a simple word-count baseline to function as well, since it doesn't train on the shape-floor combinations but rather just the linear words additively.",
@@ -196,7 +196,7 @@ export const caseStudies = {
       heading: 'Learning invented shape names',
       intro: 'Can a model learn the word “vexlo” for a circle without seeing an image labeled “vexlo”? We tested four invented words across eight dictionaries. Within each dictionary, consistent training pairs linked each word to one shape. Scrambled pairs linked it equally often to all four. The third encoder kept its initial weights. All three used the same image calibration examples labeled with ordinary shape names.',
       prediction: {
-        intro: 'Siddharth wrote this prediction before the invented-name experiment.',
+        intro: 'I wrote this prediction before the invented-name experiment.',
         quote: 'I think consistent pairings will point more clearly to the circle because vexlo always refers to the same shape. I’d expect scrambled and untrained to be close. If either ties or beats consistent pairings, that would change my mind.',
         source: ['Exact prediction', 'docs/alias-prediction.json'],
       },
@@ -208,7 +208,7 @@ export const caseStudies = {
         ['Raw word counts', '50.00%', '3,072 of 6,144. Switching only the invented word gives the same goal vector.'],
       ],
       measurement: 'Success means the frozen planner reached the pad the instruction named. The primary measure looks before any movement: for each instruction it takes the squared distance from the goal vector to the wrong pad minus the squared distance to the intended pad, so a positive number favours the intended pad. The consistent arm’s mean margin exceeded the scrambled arm’s by 8.61 on the invented words.',
-      outcome: 'Consistent pairings led both comparisons. The untrained encoder finished 1.73 percentage points above scrambled pairings and had a 0.50-unit higher mean margin. Siddharth gave no cutoff for “close”, so those gaps are reported descriptively.',
+      outcome: 'Consistent pairings led both comparisons. The untrained encoder finished 1.73 percentage points above scrambled pairings and had a 0.50-unit higher mean margin. I gave no cutoff for “close”, so those gaps are reported descriptively.',
       limits: 'The study reused 12 boards from the previous experiment. The 8.61-unit difference varied little across them. Resampling those boards gives a narrow interval, conditional on one fitted vision model, one set of calibration examples and eight dictionaries.',
       sources: [
         ['Alias-transfer results', 'docs/alias-results.md'],
